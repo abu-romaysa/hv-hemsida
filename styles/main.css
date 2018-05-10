@@ -1,7 +1,52 @@
+/*
+* TOC
+* Basic
+* Header and nav
+* Main content
+*
+*
+*
+*
+*/
+
+
+/*********************
+*
+* BASIC 
+*
+*********************/
+
+html {
+    //background: green;    
+    //height: 100%; /*så att scrollistan syns i alla webbläsare - http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ ca 5min*/
+}
+
+body {
+    background: yellow;    
+    //height: 100%; /*se länk ovan - för att sträcka ut?*/
+    font-family: Helvetica, Arial, "sans-serif";
+    color: #222; /*bättre än svart enligt forskning (ca 12 min av HiFi-1) - lättsammare för ögat*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+p {
+    line-height: 1.3em; /*ur länk ovan 10:40*/    
+}
+
+/*********************
+*
+* HEADER / NAV / TOP 
+*
+*********************/
+
 header {
-    background: lightblue;
-    font-family: Helvetica, Arial, sans-serif;
+    background: #1abc9c;    
     padding: 10px; /* om jag gör detta på body så breddar sig backgrunden ej hela vägen ut! */ 
+    height: 300px;
 }
 
 header h1 {
@@ -12,26 +57,96 @@ header h1 {
 
 header nav {
     float: right;
-    margin-right: 50px; /* obs samma som h1 margin left */
+    margin: 10px 50px; /* obs samma som h1 margin left */
     text-transform: uppercase;
 }
 
 header nav li { /* TODO och obs att ul tagits bort, rätt? */ 
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 20px; /*w3s anv padding här - https://www.w3schools.com/css/css_inline-block.asp*/
 }
 
 header nav ul a { /* TODO radera nav för att endast få ner till tre nivåer? optimering? */
+    color: #222;
+    font-size: 1.3em;
     text-decoration: none;
     padding: 5px; /* för att göra den klickbara ytan större */
 }
 
 header p {
+    font-size: 1.5em;
+    text-align: center;
     width: 50%;
-    margin: 50px auto;
-    clear: both; /* säkerhetsåtgärd om övre info blir för låmga */
+    margin: 80px auto 0px;
+    clear: both; /* säkerhetsåtgärd om övre info blir för långa */
 }
 
-body {
-    background: yellow;
+/*********************
+*
+* MAIN CONTENT 
+*
+*********************/
+
+main {
+    background: green;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 90px;
+    margin-bottom: 100px;
+}
+
+main section {
+    width: 33%; /*om den ska byta rad automatiskt så måste sätta i pixlar*/
+    float: left;
+}
+
+main .tre {
+    float: right;
+}
+
+main section img {
+    border-radius: 50%;
+    width: 200px; /*TODO titta på max-width för att skala bilden då skärmen blir mindre*/
+    height: 200px;
+    border: 10px solid white;
+    position: relative;
+    top: -130px;
+}
+
+main section p {
+    margin-bottom: 16px; /*aftonbladet*/
+}
+
+/*********************
+*
+* FOOTER 
+*
+*********************/
+
+footer {
+    clear: both;
+    background: #1abc9c;
+    padding: 20px 0 30px;
+}
+
+footer section {
+    width: 33.3%;
+    float: left;
+    //text-align: center;
+    //margin-bottom: 20px;
+}
+
+footer section div {
+    //display: inline-block; /*funkar ej - https://www.codecademy.com/en/forum_questions/5227865580ff3350200003cd*/
+    //display: table; /*funkar med auto - https://stackoverflow.com/questions/9313276/div-with-displayinline-block-margin-0-auto-not-center*/
+    width: 200px;
+    margin: 0 auto;    
+}
+
+footer section h3 { /*TODO section needed?*/
+    margin-bottom: 16px;    
+}
+
+footer section p {
+    line-height: 1.4em;
 }
