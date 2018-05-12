@@ -53,7 +53,7 @@ p {
 header {
     background: #1abc9c;
     padding: 10px; /* om jag gör detta på body så breddar sig backgrunden ej hela vägen ut! */ 
-    height: 300px;
+    //height: 300px;
     color: white;
 }
 
@@ -86,7 +86,7 @@ header p {
     font-size: 1.5em;
     text-align: center;
     width: 50%;
-    margin: 80px auto 0px;
+    margin: 80px auto 100px; /*lade till bottom för resposiviteten dvs att texten ej rinner ner i sektionerna*/
     clear: both; /* säkerhetsåtgärd om övre info blir för långa */
 }
 
