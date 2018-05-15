@@ -17,30 +17,21 @@
 *********************/
 
 html {
-    background: white;
     height: 100%; /*så att scrollistan syns i alla webbläsare - http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ ca 5min*/
 }
 
-body {        
-    background: #f5f5f5; /*HTML WhiteSmoke - https://www.w3schools.com/colors/colors_shades.asp*/
-    background: #f0f0f0; /*HTML WhiteSmoke+ - https://www.w3schools.com/colors/colors_shades.asp*/
-    
-/*    //background: #e8e8e8; */
-    /*obs ju mörkare desto mer syns ringen runt bilden*/
-    
+body {
+    font-size: 16px; /*ref på vrf bra som handledning och artikel w3 kanske*/
+    background: #f0f0f0; /*HTML WhiteSmoke+ - lite mörkare så ringarna syns bättre men ej för mkt annars mörk sida - https://www.w3schools.com/colors/colors_shades.asp*/
+
     /*height: height: 100%;  - se länk ovan - för att sträcka ut?*/
     min-height: 100%; /*nu går gråa bg hela vägen till footern*/
 
     font-family: Helvetica, Arial, "sans-serif";
     color: #222; /*bättre än svart enligt forskning (ca 12 min av HiFi-1) - lättsammare för ögat*/
-
-    /*TODO wanted?*/
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 { /*förbereder för framtiden*/
     font-weight: bold;
     line-height: 1.5em;
 }
@@ -87,12 +78,12 @@ header nav {
     text-transform: uppercase;
 }
 
-header nav li { /* TODO och obs att ul tagits bort, rätt? */ 
+header li { /* TODO och obs att ul tagits bort, rätt? */ 
     display: inline-block;
     margin-left: 20px; /*w3s anv padding här - https://www.w3schools.com/css/css_inline-block.asp*/
 }
 
-header nav ul a { /* TODO radera nav för att endast få ner till tre nivåer? optimering? */
+header ul a { /* TODO radera nav för att endast få ner till tre nivåer? optimering? */
 /*    //color: #222;*/
     color: white;
     font-size: 1.3em;
@@ -120,11 +111,11 @@ main {
     margin-top: 90px;
     margin-bottom: 100px;
     
-/*    //display: flex; */
+    display: flex;
     /*samma höjd på kolumner*/
 }
 
-main section {
+main .column {
     background: white;
     box-sizing: border-box;
     width: 31.33%; /*om den ska byta rad automatiskt så måste sätta i pixlar*/
@@ -139,7 +130,7 @@ main section {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 
-main section img {
+main img {
     border-radius: 50%;
     width: 200px; /*TODO titta på max-width för att skala bilden då skärmen blir mindre*/
     height: 200px;
@@ -149,15 +140,15 @@ main section img {
     background: #2E4A62; /*Sailor Blue - Spring 2018 Classic Color Palette - https://www.w3schools.com/colors/colors_trends.asp - om bilden eller bilderna ej har laddat eller kan ej. försökte få denna nära headern men ändå trendig*/
 }
 
-main section .column-1-image {    
+main .column-1-image {    
     left: 0px;    
 }
 
-main section .column-3-image {    
+main .column-3-image {    
     right: 0px;    
 }
 
-main section .me-image {    
+main .me-image {    
     /*to center*/
     /*for responsive design or unknown dimensions*/
     /*https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div*/
@@ -172,11 +163,11 @@ main section .me-image {
     margin-right: auto;*/
 }
 
-main section p {
+main p {
     margin-bottom: 16px; /*aftonbladet*/
 }
 
-main section p:first-of-type { /*https://css-tricks.com/almanac/selectors/f/first-child/*/
+main .column p:first-of-type { /*https://css-tricks.com/almanac/selectors/f/first-child/*/
     font-weight: bold;
     font-size: 1.2em;
 } 
@@ -203,7 +194,7 @@ footer section {
 */
 }
 
-footer section div {
+footer .wrapper {
 /*    //display: inline-block; */
     /*funkar ej - https://www.codecademy.com/en/forum_questions/5227865580ff3350200003cd*/
     
@@ -215,10 +206,10 @@ footer section div {
     margin-left: auto;
 }
 
-footer section h3 { /*TODO section needed?*/
+footer h3 { /*TODO section needed?*/
     margin-bottom: 16px;    
 }
 
-footer section p {
+footer p {
     line-height: 1.4em;
 }
