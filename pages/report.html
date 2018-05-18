@@ -4,110 +4,150 @@
     <head>
         <meta charset="utf-8" />
         <title>Salim Daoud</title>
-        <link href="../styles/main.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../styles/css-reset.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../styles/clearfix.css" media="screen" rel="stylesheet" type="text/css" />        
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="../styles/report.css" media="screen" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
 
-        <h1>Processanalys</h1>
-        
-        <h2>Head and Meta data</h2>
-        <ul>
-            <li>stänger alltid även empty taggar enligt guidelines</li>
-            <li>Vrf HMTL5</li>
-            <li></li>
-        </ul>        
-        
-        <h2>Header</h2>
-        <ul>
-            <li>Vrf Header och nav</li>
-            <li>li och a i samma rad för enkelhetens skull och listans skull</li>
-            <li>A navigation bar is basically a list of links, so using the ul and li elements makes perfect sense - https://www.w3schools.com/css/css_navbar.asp</li>
-            <li>inline-block för att få på samma rad och att den tar innehållets plats utan att behöva speca bredden till skillnad av block som w3scool. behöver ej här heller göra hela blocket klickbar </li>
-            <li>One common use for display: inline-block is to create horizontal navigation links - https://www.w3schools.com/css/css_inline-block.asp</li>
-            <li>uppercase är en stiling och därmed sköta i css</li>
-            <li>font comfortaa rounded and intended for large sizes</li>
-            <li></li>
-        </ul>
-
-        <h2>Main</h2>
-        <ul>
-            <li>Vrf section - can be used to define a part of a website with related content - However, it is up to you if you want to use div elements instead. - https://www.w3schools.com/howto/howto_website.asp</li>
-            <li>centrera bild https://www.w3schools.com/css/css_align.asp</li>
-            <li>display flex för samma höjd på kolumner - https://stackoverflow.com/questions/17900122/stretch-child-div-height-to-fill-parent-that-has-dynamic-height</li>
-            <li>to center pic in col 2 - https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div</li>
-            <li>att positionera bilden:
+        <header>
+            <h1>Salim Daoud</h1>
+            <nav>
                 <ul>
-                    <li>testade att bara göra relative och sedan top och left/right, men problemet blir att texten betraktar bilden på samma plats och ej att den visuellt har flyttat sig vilket leder till att texten ligger långt nedanför och ett stort avstånd mellan bilden och texten. relative innebär att den ff tillhör och följer det normala flödet.</li>
-                    <li>om jag också skulle lösa ovan med att relativt flytta textblocket så kanske jag ej har kontroll på slutet och höjden av rutan och avståndet mellan den sista paragrafen och border av rutan skulle troligen vara för lång. dessutom skulle jag behöva fippla med z-index för att textenrutan (div som måste skapas) som kommer senare i koden skulle i sådant fall hamna över själva bilden. kändes som en ful lösning med alla dessa skjutseringar plus att man troligen skulle tappa kontrollen av designen speciellt när den responsiva aspekten kommer in i beräkningen/hänsyn.</li>
-                    <li>kan ej flytta upp bilden med vanlig float men kunde flytta horisontellt</li>
-                    <li>absolut med relative för parent för och som ankare, iom detta så flyter bilden ovanför men relativt till dess parent sektion. iom detta kunde jag placera bilden vart jag ville och samtidigt styra textens relation till bilden genom margin-top för att flytta ned texten som bilden mer eller mindre flöt över</li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li>kunde ej ha sektion pga inga headers</li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+                    <li><a href="../index.html">About me</a></li>
+                    <li><a href="report.html">Report</a></li>
+                </ul>            
+            </nav>
+        </header>        
+        
+        <main>
+            <h1>Processanalys</h1>
 
-        <h2>Footer</h2>
-        <ul>            
-            <li>Vrf sections</li>
-            <li>h3 för ej så viktig och h2 känns som annars för bilderna</li>
-            <li>element typically contains... - https://www.w3schools.com/tags/tag_footer.asp</li>
-            <li></li>
-            <li>funderade på hur centrera texten - https://www.w3.org/Style/Examples/007/center.en.html#block</li><li>https://www.w3schools.com/howto/howto_css_three_columns.asp</li>
-        </ul>
-        
-        <h2>Sandbox</h2>
-        <ul>
-            <li>max antal tecken/ord på en rad</li>
-            <li>Vrf Indenteringar</li>
-            <li>css reset</li>
-            <li>arbetat i git för version och testa olika looks etc</li>
-            <li>egen - css fil för detta - https://www.webpagefx.com/blog/web-design/css-tip-1-resetting-your-styles-with-css-reset/</li>
-            <li>The em size unit is recommended by the W3C - https://www.w3schools.com/css/css_font.asp</li>
-            <li>margin auto så att den centrerar sig även om man ändrar strlk på skärmen - http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ - 11:30</li>
-            <li>ems why -  Ems are becoming increasingly popular in web documents due to scalability and their mobile-device-friendly nature. - https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/ - can chd base font size dvs i body...</li>
-            <li>arbetade i git och github repo - skicka länk?</li>
-            <li>försöker hålla selektorerna kort förutom där jag förbereder mig för framtiden och när jag tycker det är tydligare</li>
-            <li>wai aria - anv semantiska element</li>
-            <li></li>
-        </ul>
-        
-        <h2>Questions</h2>
-        <ul>
-            <li>när anv margin och när paddings</li>
-            <li>px eller em eller %</li>
-            <li>skippa tex nav för att jag vet att li är i den</li>
-            <li>fult att styla main som wrapper när man har denna av semantiska skäl? Eller skapa en div under bara för att?</li>
-            <li><!--meta name="viewport" content="width=device-width, initial-scale=1"--> bortkommenterat - makes the website look good on all devices and screen resolutions</li>
-            <li>footer längst ned</li>
-            <li>div namn som center eller large för klasser</li>
-            <li>vi har ingen basic css ju</li>
-            <li>box-sizing - before and after</li>
-            <li>vrf html och height 100%</li>
-            <li>måste höjden vara samma i kolumnerna</li>
-            <li>måste det vara riktig text eller kan det vara lorem ipsum</li>
-            <li>ska bredden av body vara fluid eller mindre än html?</li>
-            <li>anpassa sig efter alla strlk eller bara mobil och vad e brytpkten?</li>
-            <li>mobil vy ska ha en fixed footer?</li>
-            <li>80 på wrapper eller body</li>
-            <li>liknande regler grupperade trots olika delar av sidan eller olika sidor</li>
-            <li>hur förstå caniuse</li>
-            <li></li>
-        </ul>
-        
-        <h2>Specifikation</h2>
-        <ul>
-            <li>Här diskuterar och argumenterar ni kring era olika val vad gäller kodningen av sidan och refererar till adekvat         litteratur.</li>
-            <li>Se till att ni ordentligt argumenterar för era kodningsval, berättar hur ni tänkt och förklarar varför ni gjort som ni gjort, och refererar till litteratur /webbsidor ni läst som kopplar till det ni skriver om.</li>
-            <li>Det är bra om ni kontinuerligt i arbetet med examinationsuppgiften skriver ner era tankar, och att ni ställer er själva frågan “varför?” när ni förklarar era kodningsval. 
-            "Exempelvis kan man skriva “Jag använde mig av en ul-lista för min meny”. Sluta inte texten där, utan det är mer intressant att vi får veta varför ni använde en ul-lista. Har ni läst någonstans att detta är bäst sätt? Skriv då ner detta som en referens. Finns det alternativ till en ul-lista för menyn?"</li>
-            <li>Använd texten som ett verktyg för att visa vad ni kan och vad ni har läst i ämnet.</li>
-        </ul>
+            <h2>Head and Meta data</h2>
+            <ul>
+                <li>stänger alltid även empty taggar enligt guidelines</li>
+                <li>Vrf HMTL5</li>
+                <li></li>
+            </ul>        
 
+            <h2>Header</h2>
+            <ul>
+                <li>Vrf Header och nav</li>
+                <li>li och a i samma rad för enkelhetens skull och listans skull</li>
+                <li>A navigation bar is basically a list of links, so using the ul and li elements makes perfect sense - https://www.w3schools.com/css/css_navbar.asp</li>
+                <li>inline-block för att få på samma rad och att den tar innehållets plats utan att behöva speca bredden till skillnad av block som w3scool. behöver ej här heller göra hela blocket klickbar </li>
+                <li>One common use for display: inline-block is to create horizontal navigation links - https://www.w3schools.com/css/css_inline-block.asp</li>
+                <li>uppercase är en stiling och därmed sköta i css</li>
+                <li>font comfortaa rounded and intended for large sizes</li>
+                <li></li>
+            </ul>
+
+            <h2>Main</h2>
+            <ul>
+                <li>Vrf section - can be used to define a part of a website with related content - However, it is up to you if you want to use div elements instead. - https://www.w3schools.com/howto/howto_website.asp</li>
+                <li>centrera bild https://www.w3schools.com/css/css_align.asp</li>
+                <li>display flex för samma höjd på kolumner - https://stackoverflow.com/questions/17900122/stretch-child-div-height-to-fill-parent-that-has-dynamic-height</li>
+                <li>to center pic in col 2 - https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div</li>
+                <li>att positionera bilden:
+                    <ul>
+                        <li>testade att bara göra relative och sedan top och left/right, men problemet blir att texten betraktar bilden på samma plats och ej att den visuellt har flyttat sig vilket leder till att texten ligger långt nedanför och ett stort avstånd mellan bilden och texten. relative innebär att den ff tillhör och följer det normala flödet.</li>
+                        <li>om jag också skulle lösa ovan med att relativt flytta textblocket så kanske jag ej har kontroll på slutet och höjden av rutan och avståndet mellan den sista paragrafen och border av rutan skulle troligen vara för lång. dessutom skulle jag behöva fippla med z-index för att textenrutan (div som måste skapas) som kommer senare i koden skulle i sådant fall hamna över själva bilden. kändes som en ful lösning med alla dessa skjutseringar plus att man troligen skulle tappa kontrollen av designen speciellt när den responsiva aspekten kommer in i beräkningen/hänsyn.</li>
+                        <li>kan ej flytta upp bilden med vanlig float men kunde flytta horisontellt</li>
+                        <li>absolut med relative för parent för och som ankare, iom detta så flyter bilden ovanför men relativt till dess parent sektion. iom detta kunde jag placera bilden vart jag ville och samtidigt styra textens relation till bilden genom margin-top för att flytta ned texten som bilden mer eller mindre flöt över</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>kunde ej ha sektion pga inga headers</li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <h2>Footer</h2>
+            <ul>            
+                <li>Vrf sections</li>
+                <li>h3 för ej så viktig och h2 känns som annars för bilderna</li>
+                <li>element typically contains... - https://www.w3schools.com/tags/tag_footer.asp</li>
+                <li></li>
+                <li>funderade på hur centrera texten - https://www.w3.org/Style/Examples/007/center.en.html#block</li><li>https://www.w3schools.com/howto/howto_css_three_columns.asp</li>
+            </ul>
+
+            <h2>Sandbox</h2>
+            <ul>
+                <li>max antal tecken/ord på en rad</li>
+                <li>Vrf Indenteringar</li>
+                <li>css reset</li>
+                <li>arbetat i git för version och testa olika looks etc</li>
+                <li>egen - css fil för detta - https://www.webpagefx.com/blog/web-design/css-tip-1-resetting-your-styles-with-css-reset/</li>
+                <li>The em size unit is recommended by the W3C - https://www.w3schools.com/css/css_font.asp</li>
+                <li>margin auto så att den centrerar sig även om man ändrar strlk på skärmen - http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ - 11:30</li>
+                <li>ems why -  Ems are becoming increasingly popular in web documents due to scalability and their mobile-device-friendly nature. - https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/ - can chd base font size dvs i body...</li>
+                <li>arbetade i git och github repo - skicka länk?</li>
+                <li>försöker hålla selektorerna kort förutom där jag förbereder mig för framtiden och när jag tycker det är tydligare</li>
+                <li>wai aria - anv semantiska element</li>
+                <li></li>
+            </ul>
+
+            <h2>Questions</h2>
+            <ul>
+                <li>när anv margin och när paddings</li>
+                <li>px eller em eller %</li>
+                <li>skippa tex nav för att jag vet att li är i den</li>
+                <li>fult att styla main som wrapper när man har denna av semantiska skäl? Eller skapa en div under bara för att?</li>
+                <li><!--meta name="viewport" content="width=device-width, initial-scale=1"--> bortkommenterat - makes the website look good on all devices and screen resolutions</li>
+                <li>footer längst ned</li>
+                <li>div namn som center eller large för klasser</li>
+                <li>vi har ingen basic css ju</li>
+                <li>box-sizing - before and after</li>
+                <li>vrf html och height 100%</li>
+                <li>måste höjden vara samma i kolumnerna</li>
+                <li>måste det vara riktig text eller kan det vara lorem ipsum</li>
+                <li>ska bredden av body vara fluid eller mindre än html?</li>
+                <li>anpassa sig efter alla strlk eller bara mobil och vad e brytpkten?</li>
+                <li>mobil vy ska ha en fixed footer?</li>
+                <li>80 på wrapper eller body</li>
+                <li>liknande regler grupperade trots olika delar av sidan eller olika sidor</li>
+                <li>hur förstå caniuse</li>
+                <li></li>
+            </ul>
+
+            <h2>Specifikation</h2>
+            <ul>
+                <li>Här diskuterar och argumenterar ni kring era olika val vad gäller kodningen av sidan och refererar till adekvat         litteratur.</li>
+                <li>Se till att ni ordentligt argumenterar för era kodningsval, berättar hur ni tänkt och förklarar varför ni gjort som ni gjort, och refererar till litteratur /webbsidor ni läst som kopplar till det ni skriver om.</li>
+                <li>Det är bra om ni kontinuerligt i arbetet med examinationsuppgiften skriver ner era tankar, och att ni ställer er själva frågan “varför?” när ni förklarar era kodningsval. 
+                "Exempelvis kan man skriva “Jag använde mig av en ul-lista för min meny”. Sluta inte texten där, utan det är mer intressant att vi får veta varför ni använde en ul-lista. Har ni läst någonstans att detta är bäst sätt? Skriv då ner detta som en referens. Finns det alternativ till en ul-lista för menyn?"</li>
+                <li>Använd texten som ett verktyg för att visa vad ni kan och vad ni har läst i ämnet.</li>
+            </ul>
+        </main>
+        
+        <footer class="cf">
+            <section>
+                <div class="wrapper">
+                    <h3>Address</h3>
+                    <p>Nidarosgatan 26</p>
+                    <p>164 34 Kista</p>
+                </div>
+            </section>
+            <section>
+                <div class="wrapper">
+                    <h3>Phone</h3>
+                    <p>0707776118</p>
+                    <p>08-7987419</p>
+                </div>
+            </section>
+            <section>
+                <div class="wrapper">
+                    <h3>Email</h3>
+                    <p>salim_daoud@hotmail.com </p> <p>salim.i.daoud@gmail.com</p>
+                </div>
+            </section>
+        </footer>
+                
     </body>
 </html>
