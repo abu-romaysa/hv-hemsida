@@ -38,13 +38,35 @@ body {
     color: #222; /*bättre än svart enligt forskning (ca 12 min av HiFi-1) - lättsammare för ögat*/
 }
 
-h1, h2, h3, h4, h5, h6 { /*förbereder för framtiden*/    
+h1, h2, h3, h4, h5, h6 { /*förbereder för framtiden*/
+    font-family: 'Roboto', sans-serif; /*firefly inspiration*/
     font-weight: bold;
     line-height: 1.5em;
+    margin-bottom: 0.5em;
 }
 
-p {
+h1 {
+    font-size: 3em;
+    text-align: center;
+    /*margin-bottom: 1.2em;*/ /*lägg i main h1*/
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+p, li {
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.3em; /*ur länk ovan 10:40*/    
+}
+
+ul {    
+    list-style-type: disc;
+    padding-left: 2.5em; /*% ledde till punkt innan h2 vid liten skärm*/
+    /*testade fram till default värdet*/
+    /*https://stackoverflow.com/questions/11445453/css-set-li-indent*/
+    
+    margin-bottom: 2em
 }
 
 /*********************
@@ -56,11 +78,11 @@ p {
 header {
     background: #1abc9c;
     padding: 1em; /* om jag gör detta på body så breddar sig backgrunden ej hela vägen ut! */     
-    min-height: 300px; /*if no text is displayed then do not look weird*/
+    min-height: 330px; /*if no text is displayed then do not look weird*/
     color: white;
     
 /*    //background: url(../images/nature-light-bulb.jpg) no-repeat center center;*/
-    background-image: url(../images/nature-light-bulb.jpg);
+    background-image: url(../images/notebook-and-pen.jpg);
     background-position: center center; /*x och y*/
     background-repeat: no-repeat;
     /*https://www.webpagefx.com/blog/web-design/responsive-background-image/*/
@@ -68,9 +90,16 @@ header {
     background-size: cover;
     /* Always set a background-color to be used if the image is unavailable - tex image loading. - https://www.w3schools.com/cssref/pr_background-image.asp*/
 
+    background-color: gray;
+    background-blend-mode: multiply;
+}
+
+.landing-page header {
+    background-image: url(../images/nature-light-bulb.jpg);
+    
     /*för att göra vita texten och kontrastet mer synlig. men ej för mörk för att bevara den fina bilden med den fina gröna bladet*/
     background-color: lightgray;
-    background-blend-mode: multiply;
+    
 }
 
 header h1 {
@@ -87,6 +116,10 @@ header nav {
     margin-right: 2%; /* obs samma som h1 margin left */    
     text-transform: uppercase;        
     font-family: 'Comfortaa', cursive;    
+}
+
+header nav ul {
+    padding-left: 0px; /*ser bättre ut när man har minsta strlk på skärmen*/
 }
 
 header li { /* TODO och obs att ul tagits bort, rätt? */ 
@@ -112,6 +145,7 @@ header ul a:hover {
 
 header p {
     /*testade roboto men verkar som att den är aningen för tunn och syns inte lika bra ovanför bilden*/
+    font-family: Helvetica, Arial, "sans-serif"; /*eller open sans?*/
     font-size: 1.5em;
     text-align: center;
     width: 50%;
@@ -127,13 +161,31 @@ header p {
 *********************/
 
 main {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 90px; /*lämna för beroende av bildstorleken*/    
-    margin-bottom: 4%; /*avståndet blir automatiskt mindre till footern*/
+    width: 70%;
+    margin: 4% auto;
+    background: white;
+    padding: 50px 100px;
     
     /*display: flex;*/ /*verkar förstöra float mekanismen men har box sizing i sig?*/
     /*samma höjd på kolumner*/
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.landing-page main {    
+    width: 80%;
+    background: inherit; /*för att ta bodys gråa*/    
+    margin-top: 90px; /*lämna för beroende av bildstorleken*/
+    padding: 0; /*no px needed?*/
+    box-shadow: none;
+}
+
+main h1 {
+    margin-bottom: 1.2em;
+}
+
+main li {
+    font-size: 1.5rem; /*anv rem så att under li ej skulle bli relativa till över li och ge olika storlekar*/
 }
 
 main .column {
