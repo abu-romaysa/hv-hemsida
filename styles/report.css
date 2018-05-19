@@ -9,6 +9,12 @@
 *
 */
 
+/* 1. Box Model */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 /*********************
 *
@@ -62,11 +68,11 @@ ul {
     margin-bottom: 2em
 }
 
-/*********************
+/********************
 *
 * HEADER / NAV / TOP 
 *
-*********************/
+********************/
 
 header {
     background: #1abc9c;
@@ -85,10 +91,10 @@ header {
 
     /*för att göra vita texten och kontrastet mer synlig. men ej för mörk för att bevara den fina bilden med den fina gröna bladet*/
     background-color: gray;
-    //background-color: lightgray;
+    /*background-color: lightgray;*/
     background-blend-mode: multiply;
     
-    min-height: 290px;
+    min-height: 300px;
 }
 
 header h1 {
@@ -141,12 +147,13 @@ header p {
 *********************/
 
 main {    
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     background: white;
-    //margin-top: 90px;
-    //margin-bottom: 100px;
+    margin-top: 90px;
+    margin-bottom: 100px;
     padding: 50px 100px; /*TODO bör fixa med boxmodellen nu påverkar detta inte width*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 main li {
@@ -181,8 +188,7 @@ footer .wrapper {
     
 /*    //display: table; */
     /*funkar med auto - https://stackoverflow.com/questions/9313276/div-with-displayinline-block-margin-0-auto-not-center*/
-    
-    //width: 200px;
+        
     width: 50%;
     margin-right: auto;
     margin-left: auto;

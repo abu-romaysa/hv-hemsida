@@ -9,6 +9,13 @@
 *
 */
 
+/* 1. Box Model */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*bättre kontroll dvs padding och border inräknade i width- https://css-tricks.com/box-sizing/*/
 
 /*********************
 *
@@ -122,16 +129,15 @@ main {
     margin-top: 90px;
     margin-bottom: 100px;
     
-    display: flex;
+    /*display: flex;*/ /*verkar förstöra float mekanismen men har box sizing i sig?*/
     /*samma höjd på kolumner*/
 }
 
 main .column {
-    background: white;
-    box-sizing: border-box;
+    background: white; 
     width: 31.33%; /*om den ska byta rad automatiskt så måste sätta i pixlar*/
     float: left;
-    padding: 10px;
+    padding: 50px;
     margin-left: 1%;
     margin-right: 1%;
     position: relative; /*gör denna till image anchor point*/
@@ -142,9 +148,9 @@ main .column {
 }
 
 main img {
+    width: 220px; /*TODO titta på max-width för att skala bilden då skärmen blir mindre*/
+    height: 220px;
     border-radius: 50%;
-    width: 200px; /*TODO titta på max-width för att skala bilden då skärmen blir mindre*/
-    height: 200px;
     border: 10px solid white;    
     position: absolute;  /*dessa två rader här bättre för gemensamt och att uppdatera i ett ställe*/
     top: -130px;
@@ -212,7 +218,6 @@ footer .wrapper {
 /*    //display: table; */
     /*funkar med auto - https://stackoverflow.com/questions/9313276/div-with-displayinline-block-margin-0-auto-not-center*/
     
-    //width: 200px;
     width: 50%;
     margin-right: auto;
     margin-left: auto;
