@@ -1,10 +1,12 @@
 /*
 * TOC
-* Base
-* Header and nav
-* Main content
-* Footer
-*
+* CSS-RESET
+* CLEARFIX
+* BASE
+* HEADER & NAV
+* MAIN CONTENT
+* FOOTER
+* MEDIA QUERIES
 *
 *
 */
@@ -285,4 +287,20 @@ footer h3 { /*TODO section needed?*/
 
 footer p {
     line-height: 1.4em;
+}
+
+
+/*********************
+*
+* MEDIA QUERIES
+*
+*********************/
+@media print {    
+    nav {
+        display: none;
+    }
+    
+    header, .landing-page header {
+        background-image: none;
+    }
 }
