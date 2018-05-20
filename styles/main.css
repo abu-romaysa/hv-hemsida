@@ -151,7 +151,7 @@ header p {
     font-size: 1.5em;
     text-align: center;
     width: 50%;
-    margin: 3.5em auto 3.5em; /*lade till bottom för resposiviteten dvs att texten ej 
+    margin: 3.5em auto 3.5em; /*TODOT merga 3.5 - lade till bottom för resposiviteten dvs att texten ej 
     clear: both; /* säkerhetsåtgärd om övre info blir för långa */
     /*relativ till texten*/
 }
@@ -178,7 +178,7 @@ main {
     width: 80%;
     background: inherit; /*för att ta bodys gråa*/    
     margin-top: 90px; /*lämna för beroende av bildstorleken*/
-    padding: 0; /*no px needed?*/
+    padding: 0px; /*no px needed?*/
     box-shadow: none;
 }
 
@@ -213,15 +213,15 @@ main img {
     background: #2E4A62; /*Sailor Blue - Spring 2018 Classic Color Palette - https://www.w3schools.com/colors/colors_trends.asp - om bilden eller bilderna ej har laddat eller kan ej. försökte få denna nära headern men ändå trendig*/
 }
 
-main .column-1-image {    
+main img.my-home {    
     left: 0px;    
 }
 
-main .column-3-image {    
+main img.my-equipment {    
     right: 0px;    
 }
 
-main .me-image {    
+main img.my-time {    
     /*to center*/
     /*for responsive design or unknown dimensions*/
     /*https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div*/
@@ -295,11 +295,69 @@ footer p {
 * MEDIA QUERIES
 *
 *********************/
+
+/* For mobile phones - Extra small devices (phones, 600px and down)*/
+/* Note: Small devices (portrait tablets and large phones, 600px and up (till 768)) */
+/*Källa: https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
+@media only screen and (max-width: 600px) {    
+
+    body {
+        background: yellow;
+    } /*TODO remove - just for testing*/
+
+    header h1 {
+        margin-left: 0px;
+        float: none;
+        
+    }
+
+    header nav {        
+        float: none;
+        text-align: center;        
+    }
+
+    header p {
+        font-size: 1.2em;
+        margin: 0.5em auto 2em;                
+        font-weight: bold; /*så texten syns bättre framför bilden*/        
+        /*text-align: justify; - rivers! */
+    }
+
+    main { /*för report sidan - TOSDO ff text overflow*/
+        width: 100%;
+        margin: 0px auto; /*auto för landing page i mitten*/
+        padding: 20px;
+        /*kolla textstorlek på sidan*/
+    }
+
+    main .about-my-home, main .about-my-development {
+        display: none;
+    }
+
+    main .column {
+        float: none;
+        width: 100%;
+    }
+
+    footer .wrapper {
+        width: 90%;
+    }
+
+    footer h3 {
+        font-size: 1em;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
+
+} 
+
 @media print {    
     nav {
         display: none;
     }
-    
+
     header, .landing-page header {
         background-image: none;
     }
