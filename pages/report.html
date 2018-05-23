@@ -18,7 +18,7 @@
 
     <body>
 
-        <header>
+        <header id="site-header">
             <h1>Salim Daoud</h1>
             <nav>
                 <ul>
@@ -27,9 +27,12 @@
                 </ul>            
             </nav>
         </header>        
-        
+
         <main>
-            <h1>Processanalys</h1>
+
+            <header>
+                <h1>Processanalys</h1>
+            </header>            
 
             <h2>Head and Meta data</h2>
             <ul>
@@ -61,8 +64,7 @@
                         <li>testade att bara göra relative och sedan top och left/right, men problemet blir att texten betraktar bilden på samma plats och ej att den visuellt har flyttat sig vilket leder till att texten ligger långt nedanför och ett stort avstånd mellan bilden och texten. relative innebär att den ff tillhör och följer det normala flödet.</li>
                         <li>om jag också skulle lösa ovan med att relativt flytta textblocket så kanske jag ej har kontroll på slutet och höjden av rutan och avståndet mellan den sista paragrafen och border av rutan skulle troligen vara för lång. dessutom skulle jag behöva fippla med z-index för att textenrutan (div som måste skapas) som kommer senare i koden skulle i sådant fall hamna över själva bilden. kändes som en ful lösning med alla dessa skjutseringar plus att man troligen skulle tappa kontrollen av designen speciellt när den responsiva aspekten kommer in i beräkningen/hänsyn.</li>
                         <li>kan ej flytta upp bilden med vanlig float men kunde flytta horisontellt</li>
-                        <li>absolut med relative för parent för och som ankare, iom detta så flyter bilden ovanför men relativt till dess parent sektion. iom detta kunde jag placera bilden vart jag ville och samtidigt styra textens relation till bilden genom margin-top för att flytta ned texten som bilden mer eller mindre flöt över</li>
-                        <li></li>
+                        <li>absolut med relative för parent för och som ankare, iom detta så flyter bilden ovanför men relativt till dess parent sektion. iom detta kunde jag placera bilden vart jag ville och samtidigt styra textens relation till bilden genom margin-top för att flytta ned texten som bilden mer eller mindre flöt över</li>                        
                         <li></li>
                     </ul>
                 </li>
