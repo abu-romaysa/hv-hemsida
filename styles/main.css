@@ -79,7 +79,7 @@ ul {
 
 header {
     background: #1abc9c;
-    padding: 1em; /* om jag gör detta på body så breddar sig backgrunden ej hela vägen ut! */     
+    padding:  18px; /* om jag gör detta på body så breddar sig backgrunden ej hela vägen ut! */ /*1em kommer bli stort och konstigt om man ändrar eller lägger till större font size*/
     min-height: 330px; /*if no text is displayed then do not look weird*/
     color: white;
     
@@ -116,12 +116,12 @@ header h1 {
 header nav {
     float: right;    
     margin-right: 2%; /* obs samma som h1 margin left */    
-    text-transform: uppercase;        
+    text-transform: uppercase;
     font-family: 'Comfortaa', cursive;    
 }
 
 header nav ul {
-    padding-left: 0px; /*ser bättre ut när man har minsta strlk på skärmen*/
+    padding-left: 0; /*ser bättre ut när man har minsta strlk på skärmen*/ /*todo lägga i mq?*/
 }
 
 header li { /* TODO och obs att ul tagits bort, rätt? */ 
@@ -138,7 +138,7 @@ header ul a { /* TODO radera nav för att endast få ner till tre nivåer? optim
     
     font-size: 1.6em;
     text-decoration: none;
-    padding: 5px; /* för att göra den klickbara ytan större */   /*% gav egen rad*/     
+    padding: 0.2em; /* för att göra den klickbara ytan större */ /*% gav egen rad*/
 }
 
 header ul a:hover {
@@ -167,6 +167,7 @@ main {
     margin: 4% auto;
     background: white;
     padding: 50px 100px;
+    /*padding: 2.7em 5.5em;*/
     
     /*display: flex;*/ /*verkar förstöra float mekanismen men har box sizing i sig?*/
     /*samma höjd på kolumner*/
@@ -178,7 +179,7 @@ main {
     width: 80%;
     background: inherit; /*för att ta bodys gråa*/    
     margin-top: 90px; /*lämna för beroende av bildstorleken*/
-    padding: 0px; /*no px needed?*/
+    padding: 0; /*no px needed?*/
     box-shadow: none;
 }
 
@@ -299,16 +300,30 @@ footer p {
 /* For mobile phones - Extra small devices (phones, 600px and down)*/
 /* Note: Small devices (portrait tablets and large phones, 600px and up (till 768)) */
 /*Källa: https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
-@media only screen and (max-width: 600px) {    
+/*https://css-tricks.com/snippets/css/media-queries-for-standard-devices/*/
+@media only screen and (max-width: 600px),
+            screen and (max-device-width: 600px) {
 
     body {
         background: yellow;
+        /*font-size: 16px;*/
     } /*TODO remove - just for testing*/
+
+    header {
+        background-image: url(../images/notebook-and-pen-mobile-version.jpg);
+        /*bilden 3 ggr mindre - 35% mindre*/
+        min-height: 200px;
+        
+    }
+
+    .landing-page header {
+        background-image: url(../images/nature-light-bulb-mobile-version.jpg);
+        /*ca 30% mindre i lagringsstrlk*/        
+    }
 
     header h1 {
         margin-left: 0px;
         float: none;
-        
     }
 
     header nav {        
@@ -351,9 +366,9 @@ footer p {
         font-size: 0.9em;
     }
 
-} 
+}
 
-@media print {    
+@media print {
     nav {
         display: none;
     }
