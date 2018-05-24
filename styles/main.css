@@ -315,8 +315,7 @@ footer p {
             screen and (max-device-width: 600px) {
 
     body {
-        background: yellow;
-        /*font-size: 16px;*/
+        font-size: 16px;
     } /*TODO remove - just for testing*/
 
     #site-header {
@@ -342,17 +341,23 @@ footer p {
     }
 
     #site-header p {
-        font-size: 1.2em;
-        margin: 0.5em auto 2em;                
+        margin: 0.5em auto 2em;
         font-weight: bold; /*så texten syns bättre framför bilden*/        
         /*text-align: justify; - rivers! */
+        width: 80%; /*som main 80 aligned snyggare, ser naturligare ut än mindre rader då lite rivers och ser konstigare ut*/
     }
 
     main { /*för report sidan - TOSDO ff text overflow*/
         width: 100%;
-        margin: 0px auto; /*auto för landing page i mitten*/
+        margin: 0px;
         padding: 20px;
         /*kolla textstorlek på sidan*/
+    }
+
+    .landing-page main {
+        margin-bottom: 7%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     main .about-my-home, main .about-my-development {
@@ -364,18 +369,24 @@ footer p {
         width: 100%;
     }
 
+    footer {
+        padding-top: 1.5em;
+    }
+
+    footer section {
+        float: none;
+        width: 100%;
+    }
+
     footer .wrapper {
-        width: 90%;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1.5em;
     }
 
     footer h3 {
-        font-size: 1em;
+        margin-bottom: 0.3em;
     }
-
-    footer p {
-        font-size: 0.9em;
-    }
-
 }
 
 @media print {
