@@ -108,13 +108,10 @@ table {
 *
 *********************/
 
-/* 1. Box Model */
+/* Gäller för alla element inkl. pseudo element */
 *, *:before, *:after {
-    -moz-box-sizing: border-box; /*TODO rm - fixed 2014 Apr 29*/
-    -webkit-box-sizing: border-box; /*97% kan öka med ca 0,3% för blackberry v7 som är innan 2013*/
     box-sizing: border-box;
 }
-/*bättre kontroll dvs padding och border inräknade i width- https://css-tricks.com/box-sizing/*/
 
 
 /*********************
@@ -124,12 +121,13 @@ table {
 *********************/
 
 html {
-    height: 100%; /*så att scrollistan syns i alla webbläsare - http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ ca 5min*/
+    height: 100%; /* så att scrollistan syns i alla webbläsare */
 }
 
 body {
     font-size: 18px; /*ref på vrf bra som handledning och artikel w3 kanske*/
     background: #f0f0f0; /*HTML WhiteSmoke+ - lite mörkare så ringarna syns bättre men ej för mkt annars mörk sida - https://www.w3schools.com/colors/colors_shades.asp*/
+    /*kolla caniuse*/
 
     /*height: height: 100%;  - se länk ovan - för att sträcka ut?*/
     min-height: 100%; /*nu går gråa bg hela vägen till footern*/

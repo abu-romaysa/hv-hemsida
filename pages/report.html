@@ -4,8 +4,6 @@
     <head>
         <meta charset="utf-8" />
         <title>Salim Daoud</title>
-        <link href="../styles/css-reset.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../styles/clearfix.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -31,12 +29,43 @@
                 <h2>Processanalys</h2>
             </header>            
 
-            <h3>Head and Meta data</h3>
+            <h3>Övergripande Kommentarer</h3>
             <ul>
-                <li>stänger alltid även empty taggar enligt guidelines</li>
-                <li>Vrf HMTL5</li>
+                <li>hyphen</li>
+                <li>git - diff - gå tillbaks - labba enkelt</li>
                 <li></li>
-            </ul>        
+            </ul>
+    
+            <h3>CSS Reset</h3>
+            <ul>
+                <li>Använder mig av en CSS reset för att ta bort grundstilmallen som webbläsaren sätter för att sedan kunna lägga på min egna stilmall för att kunna styra bättre hur saker och ting ska se ut vilket leder till att min egen stilmall kommer att användas och inte webbläsarens stilmall. (http://cumulus.ei.hv.se/~pb/kurser/webbdesign/html-en-hel-sida/)</li>
+                <li>Jag nollställer hela min stilmall så att jag verkligen kan börja från grunden och att inte webbläsaren på något sätt kommer in och förstör med sitt standarutseende. (http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ 3:30)</li>
+                <li>Hämtade en färdig reset som är färdiggjord för HTML5 i vilket jag kodar i. Jag valde helt enkelt samma som de som användes under föreläsningarna??? och som utförde jobbet för mig.</li>
+                <li></li>
+            </ul>
+            
+            <h3>Clearfix</h3>
+            <ul>
+                <li>I och med att jag designar min sida med floats innebär detta att jag kommer att ha element - som kolumnerna - som kommer att "flyta" ovanför det normala flödet. Detta leder i sin tur till att dess förälder ej kommer att känna till dess "flytande" "barn-element" och kommer därmed att kollapsa och därmed inte innesluta de flytande elementet i hela sin "box". Genom att använda clearfix så slipper jag använda andra fullösningar som innebar att man skapade onödiga element för att lösa detta fenomen geom att sedan sätta en "clear" på dessa. Clearfixen löser detta fiffigt med att generera innehåll före och efter ett element med hjälp av CSS så man sedan kan göra "clear" på förälder elementet som kollapsar. (https://www.youtube.com/watch?list=PLhAmtjlxenRv1bkCBlncVgwWT3U2MICLU&v=jWjIoeqkSqc)</li>                
+                <li>Jag valde att kopiera en befintlig clearfix - Nicolas Gallaghers clearfix - då jag kan vara säker på att denna tar hänsyn till och innehåller alla uppdateringar och modifiering som behövs för att stödja så gott som alla webbläsare. Man skall ju inte uppfinna hjulet två gånger heller. (http://nicolasgallagher.com/micro-clearfix-hack/)</li>                
+            </ul>
+
+            <h3>Box Model</h3>
+            <ul>
+                <li>Jag valde till slut att använda mig av "box-sizing: border-box" för alla mina element. Detta då beräkningarna av min sidas komponenter blev mycket enklare. Denna metod innebär att elementets inställda bredd (och höjd för den delen) inte påverkas av av paddings och borders. Detta gör den reponsiva designen enklare och mer lätthanterlig. Jag kunde t.ex. nu sätta bredden på mina "flytande" element och sedan ställa in olika paddings och borders utan att oroa mig för att dessa skulle adderas till själva bredden och därmed förstöra min layout genom exempelvis att en kolumn inte längre fick plats i sin rad och hoppar ned på en egen rad. (https://css-tricks.com/box-sizing/). Detta kommer även att hjälpa för att få en mer korrekt utrökning av komponenterna i alla webbläsare och kompletterar därmed min CSS reset. (http://cumulus.ei.hv.se/~pb/kurser/webbdesign/html-en-hel-sida/ 09:00)</li>
+                <li>För att undvika att få oväntade resultat på eventuella pseudo element??? så lade jag till - förutom "stjärnan" som representerar alla element - även in "*:before" och "*:after". (https://css-tricks.com/box-sizing/)</li>
+                <li>Efter att ha undersökt denna property??? i den mycket populära och användbara sidan caniuse.com så tog  jag beslutet att ej använda mig av några prefix som t.ex. användes i föreläsningarna???. Egenskapen har stöd i 97% av fallen och Firefox tog bort villkoret att använda "-moz-" prefixet redan i deras version 29 som utgavs 29 april 2014. Detsamma gäller Blackberry Browser som gjorde liknande i sin version 10 som utgavs redan 30 jan 2013. (https://caniuse.com/#search=box-sizing)</li>
+            </ul>
+
+            <h3>Base</h3>
+            <ul>
+                <li>Efter Att ha gjort en CSS reset så behöver jag sätta basen för min CSS kod och ta tillbaka grundinställningar jag vill använda för min sida. Jag ställer här in allt som generellt ska gälla för min sida för att sedan jobba vidare med varje objekt var för sig. Fördelen med detta är även att alla nya sidor jag skapar kommer att ha ett mer eller mindre enhetligt utseende och att jag sedan bara behöver ändra för de specifika element jag lägger till. Tanken är att jag tar tillbaka inställningar jag har "resettat". Detta är ett tips jag fick av en föreläsning. Komplett Hemsida del 1 - (http://cumulus.ei.hv.se/~pb/kurser/webbdesign/html-en-hel-sida/) och CSS1 RWD del6 - (http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/)</li>
+                <li>Jag satte höjden på html och body elementet till 100% så att scrollistan syns i alla webbläsare och för att body ska sträcka sig hela vägen ned. (http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ ca 5min)</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
 
             <h3>Header</h3>
             <ul>
