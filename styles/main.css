@@ -1,23 +1,121 @@
 /*
-* TOC
-* CSS-RESET
-* CLEARFIX
-* BASE
-* HEADER & NAV
-* MAIN CONTENT
-* FOOTER
-* MEDIA QUERIES
-*
-*
+* TOC:
+** CSS RESET
+** CLEARFIX
+** BOX MODEL
+** BASE
+** HEADER & TOP MENU
+** MAIN CONTENT
+*** COLUMNS
+** FOOTER
+** MEDIA QUERIES
 */
+
+
+/*********************
+*
+* CSS RESET
+*
+*********************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*********************
+*
+* CLEARFIX
+*
+*********************/
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+/*********************
+*
+* BOX MODEL
+*
+*********************/
 
 /* 1. Box Model */
 *, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; /*TODO rm - fixed 2014 Apr 29*/
+    -webkit-box-sizing: border-box; /*97% kan öka med ca 0,3% för blackberry v7 som är innan 2013*/
     box-sizing: border-box;
 }
 /*bättre kontroll dvs padding och border inräknade i width- https://css-tricks.com/box-sizing/*/
+
 
 /*********************
 *
@@ -69,7 +167,7 @@ p, ul {
 }
 
 ul {    
-    list-style-type: disc;
+    list-style-type: disc; /*not in caniuse?*/
     padding-left: 2.5em; /*% ledde till punkt innan h2 vid liten skärm*/
     /*testade fram till default värdet*/
     /*https://stackoverflow.com/questions/11445453/css-set-li-indent*/
@@ -77,9 +175,10 @@ ul {
     margin-bottom: 2em
 }
 
+
 /*********************
 *
-* HEADER / NAV / TOP 
+* HEADER & TOP MENU 
 *
 *********************/
 
@@ -91,7 +190,7 @@ ul {
     
 /*    //background: url(../images/nature-light-bulb.jpg) no-repeat center center;*/
     background-image: url(../images/notebook-and-pen.jpg);
-    background-position: center center; /*x och y*/
+    background-position: center center; /*x och y*/ /*ej i opera mini men 94,17*/
     background-repeat: no-repeat;
     /*https://www.webpagefx.com/blog/web-design/responsive-background-image/*/
 
@@ -99,7 +198,7 @@ ul {
     /* Always set a background-color to be used if the image is unavailable - tex image loading. - https://www.w3schools.com/cssref/pr_background-image.asp*/
 
     background-color: gray;
-    background-blend-mode: multiply;
+    background-blend-mode: multiply; /*caniuse ej IE, Edge, Opera Mini 87,23 iom partially endast talar om andra modes*/
 }
 
 .landing-page #site-header {
@@ -116,13 +215,13 @@ ul {
     margin-left: 2%;    
     line-height: 1em;
     font-family: 'Comfortaa', cursive;        
-    text-shadow: 0px -1px 1px #000; /*rwd lektionen*/    
+    text-shadow: 0px -1px 1px #000; /*rwd lektionen*/ /*97,29*/
 }
 
 #site-header nav {
     float: right;    
     margin-right: 2%; /* obs samma som h1 margin left */    
-    text-transform: uppercase;
+    text-transform: uppercase; /*These properties are supported in effectively all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)*/
     font-family: 'Comfortaa', cursive;    
 }
 
@@ -143,7 +242,7 @@ ul {
     /*https://stackoverflow.com/questions/7015302/css-hexadecimal-rgba*/
     /*caniuse*/
     
-    text-decoration: none;
+    text-decoration: none; /**caniuse all see above*/
     padding: 0.2em; /* för att göra den klickbara ytan större */ /*% gav egen rad*/
 }
 
@@ -162,6 +261,7 @@ ul {
     /*relativ till texten*/
 }
 
+
 /*********************
 *
 * MAIN CONTENT 
@@ -177,8 +277,9 @@ main {
     
     /*display: flex;*/ /*verkar förstöra float mekanismen men har box sizing i sig?*/
     /*samma höjd på kolumner*/
+    /*flex förstör kolumn paddingen eller beräkningen i mobil versionen*/
     
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /*caniuse 94,6 ej opera mini*/
 }
 
 .landing-page main {    
@@ -200,6 +301,17 @@ main ul {
 main ul ul { /*https://www.sitepoint.com/understanding-and-using-rem-units-in-css/*/
     font-size: 1em;        
 }
+
+main p {
+    margin-bottom: 1em;
+}
+
+
+/*********************
+*
+* COLUMNS (MAIN CONTENT)
+*
+*********************/
 
 main .column {
     background: white; 
@@ -237,7 +349,7 @@ main img.my-time {
     /*for responsive design or unknown dimensions*/
     /*https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div*/
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0); /*caniuse 94,6ej opera mini*/
     
     /*this also work according to same source*/
     /*left: 0;
@@ -247,14 +359,11 @@ main img.my-time {
     margin-right: auto;*/
 }
 
-main p {
-    margin-bottom: 1em;
-}
-
 main .column p:first-of-type { /*https://css-tricks.com/almanac/selectors/f/first-child/*/
     font-weight: bold;
     font-size: 1.3em;
 } 
+
 
 /*********************
 *
@@ -376,12 +485,13 @@ footer p {
     footer section {
         float: none;
         width: 100%;
+        /*box-shadow: 0px 24px 3px -25px white;*/ /*streck mellan*/ /*http://jsfiddle.net/WuZat/290/*/
     }
 
     footer .wrapper {
         width: 100%;
         text-align: center;
-        margin-bottom: 1.5em;
+        margin-bottom: 1.5em;        
     }
 
     footer h3 {
