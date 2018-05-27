@@ -121,22 +121,18 @@ table {
 *********************/
 
 html {
-    height: 100%; /* så att scrollistan syns i alla webbläsare */
+    height: 100%;
 }
 
 body {
-    font-size: 18px; /*ref på vrf bra som handledning och artikel w3 kanske*/
-    background: #f0f0f0; /*HTML WhiteSmoke+ - lite mörkare så ringarna syns bättre men ej för mkt annars mörk sida - https://www.w3schools.com/colors/colors_shades.asp*/
-    /*kolla caniuse*/
-
-    /*height: height: 100%;  - se länk ovan - för att sträcka ut?*/
-    min-height: 100%; /*nu går gråa bg hela vägen till footern*/
-
+    font-size: 18px; /* TODO ref på vrf bra som handledning och artikel w3 kanske*/
+    background: #f0f0f0; /*TODO kolla caniuse*/
+    min-height: 100%;
     font-family: Helvetica, Arial, "sans-serif";
-    color: #222; /*bättre än svart enligt forskning (ca 12 min av HiFi-1) - lättsammare för ögat*/
+    color: #222;
 }
 
-h1, h2, h3, h4, h5, h6 { /*förbereder för framtiden*/
+h1, h2, h3 {
     font-family: 'Roboto', sans-serif; /*firefly inspiration*/
     font-weight: bold;
     line-height: 1.5em;
@@ -145,8 +141,6 @@ h1, h2, h3, h4, h5, h6 { /*förbereder för framtiden*/
 
 h1 {
     font-size: 3em;
-    text-align: center; /*todo mobil-version flytta dit?*/
-    /*margin-bottom: 1.2em;*/ /*lägg i main h1*/
 }
 
 h2 {
@@ -164,13 +158,10 @@ p, ul {
     font-size: 1.2em;
 }
 
-ul {    
-    list-style-type: disc; /*not in caniuse?*/
-    padding-left: 2.5em; /*% ledde till punkt innan h2 vid liten skärm*/
-    /*testade fram till default värdet*/
-    /*https://stackoverflow.com/questions/11445453/css-set-li-indent*/
-    
-    margin-bottom: 2em
+ul {
+    list-style-type: disc;
+    padding-left: 2.5em;
+    margin-bottom: 2em;
 }
 
 
@@ -440,6 +431,7 @@ footer p {
     #site-header h1 {
         margin-left: 0px;
         float: none;
+        text-align: center;
     }
 
     #site-header nav {        
