@@ -172,67 +172,70 @@ ul {
 *********************/
 
 #site-header {
-    background: #1abc9c;
-    padding:  18px; /* om jag gör detta på body så breddar sig backgrunden ej hela vägen ut! */ /*1em kommer bli stort och konstigt om man ändrar eller lägger till större font size*/
-    min-height: 330px; /*if no text is displayed then do not look weird*/
-    color: white;
-    
-/*    //background: url(../images/nature-light-bulb.jpg) no-repeat center center;*/
+    padding:  18px;
+    min-height: 330px;
+    color: white; /* så att texten syns bättre framför bilden */
+
     background-image: url(../images/notebook-and-pen.jpg);
-    background-position: center center; /*x och y*/ /*ej i opera mini men 94,17*/
+
+    /* centrera alltid horisontellt och vertikallt */
+    background-position: center center;
+
+    /* upprepa ej bilden */
     background-repeat: no-repeat;
-    /*https://www.webpagefx.com/blog/web-design/responsive-background-image/*/
 
+    /* skala om bilden så att denna alltid fyller hela behållaren */
     background-size: cover;
-    /* Always set a background-color to be used if the image is unavailable - tex image loading. - https://www.w3schools.com/cssref/pr_background-image.asp*/
 
+    /* som visas när bilden laddas och för att "blanda" med bilden för att ge en mörkare nyans */
     background-color: gray;
-    background-blend-mode: multiply; /*caniuse ej IE, Edge, Opera Mini 87,23 iom partially endast talar om andra modes*/
+
+    /* blandar bilden med färgen */
+    background-blend-mode: multiply;
 }
 
 .landing-page #site-header {
     background-image: url(../images/nature-light-bulb.jpg);
-    
-    /*för att göra vita texten och kontrastet mer synlig. men ej för mörk för att bevara den fina bilden med den fina gröna bladet*/
     background-color: lightgray;
-    
 }
 
 #site-header h1 {
     font-size: 3em; /* TODO är detta strlken jag vill ha? em? */
-    float: left;    
-    margin-left: 2%;    
+    float: left;
+    margin-left: 2%;
     line-height: 1em;
-    font-family: 'Comfortaa', cursive;        
-    text-shadow: 0px -1px 1px #000; /*rwd lektionen*/ /*97,29*/
+    font-family: 'Comfortaa', cursive;
+
+    /* följande egenskap och värden indenterar texten */
+    /*h-, v-skugga, suddighet och färg */
+    text-shadow: 0px -1px 1px black;
 }
 
 #site-header nav {
     float: right;    
-    margin-right: 2%; /* obs samma som h1 margin left */    
+    margin-right: 2%; /* obs! samma som h1 textens avstånd till ytterkanten */    
     text-transform: uppercase; /*These properties are supported in effectively all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)*/
     font-family: 'Comfortaa', cursive;    
 }
 
 #site-header nav ul {
     font-size: 1.6em;
-    padding-left: 0; /*ser bättre ut när man har minsta strlk på skärmen*/ /*todo lägga i mq?*/    
 }
 
-#site-header li { /* TODO och obs att ul tagits bort, rätt? */ 
+#site-header li { /* TODO lägga till nav? och obs att ul tagits bort, rätt? */
     display: inline-block;
-    margin-left: 20px; /*w3s anv padding här - https://www.w3schools.com/css/css_inline-block.asp*/    
-    /*% gav egen rad dvs för mkt förutom ca 0.001 typ*/
+    margin-left: 20px; /* % gav egen rad dvs för mkt förutom ca 0.001 typ */
 }
 
 #site-header ul a { /* TODO radera nav för att endast få ner till tre nivåer? optimering? */
-    color: rgba(255,255,255,0.75); 
-    /*https://jonpolygon.com/css-hover-link-colors/*/
-    /*https://stackoverflow.com/questions/7015302/css-hexadecimal-rgba*/
-    /*caniuse*/
-    
-    text-decoration: none; /**caniuse all see above*/
-    padding: 0.2em; /* för att göra den klickbara ytan större */ /*% gav egen rad*/
+
+    /* RGB färgkod med opacitet */
+    color: rgba(255,255,255,0.75);
+
+    /* ta bort understrykningen av länktexten */
+    text-decoration: none;
+
+    padding: 0.2em; /*% gav egen rad*/
 }
 
 #site-header ul a:hover {
@@ -245,9 +248,8 @@ ul {
     font-size: 1.5em;
     text-align: center;
     width: 50%;
-    margin: 3.5em auto 3.5em; /*TODOT merga 3.5 - lade till bottom för resposiviteten dvs att texten ej 
-    clear: both; /* säkerhetsåtgärd om övre info blir för långa */
-    /*relativ till texten*/
+    margin: 3.5em auto;
+    clear: both;
 }
 
 
@@ -437,6 +439,10 @@ footer p {
     #site-header nav {        
         float: none;
         text-align: center;        
+    }
+                
+    #site-header nav ul {
+        padding-left: 0; /*ser bättre ut när man har minsta strlk på skärmen*/
     }
 
     #site-header p {
