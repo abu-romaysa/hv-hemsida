@@ -132,7 +132,7 @@ body {
     color: #222;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Roboto', sans-serif; /*firefly inspiration*/
     font-weight: bold;
     line-height: 1.5em;
@@ -148,7 +148,7 @@ h2 {
     text-align: center;
 }
 
-h3 {
+h3, h4 {
     font-size: 1.5em;
 }
 
@@ -371,41 +371,30 @@ main .column p:first-of-type {
 *
 *********************/
 
-footer {    
-    clear: both;
+#site-footer {
     background: #2E4A62;
-    color: white;    
+    color: white;
     padding: 1%;
 }
 
-footer section {
+#site-footer section {
     width: 33.3%;
     float: left;
-/*
-    //text-align: center;
-    //margin-bottom: 20px;
-*/
 }
 
-footer .wrapper {
-/*    //display: inline-block; */
-    /*funkar ej - https://www.codecademy.com/en/forum_questions/5227865580ff3350200003cd*/
-    
-/*    //display: table; */
-    /*funkar med auto - https://stackoverflow.com/questions/9313276/div-with-displayinline-block-margin-0-auto-not-center*/
-    
+#site-footer .contact-wrapper {
     width: 50%;
     margin-right: auto;
     margin-left: auto;
 }
 
-footer h3 { /*TODO section needed?*/
+#site-footer h4 {
     font-family: 'Comfortaa', cursive; /*fundera på att ha regler som grupperar liknande så man bara behöver uppdatera i ett ställe*/
-    font-size: 1.2em;    
+    font-size: 1.2em;
     margin-bottom: 0.7em;
 }
 
-footer p {
+#site-footer p {
     line-height: 1.4em;
 }
 
@@ -483,23 +472,23 @@ footer p {
         width: 100%;
     }
 
-    footer {
+    #site-footer {
         padding-top: 1.5em;
     }
 
-    footer section {
+    #site-footer section {
         float: none;
         width: 100%;
         /*box-shadow: 0px 24px 3px -25px white;*/ /*streck mellan*/ /*http://jsfiddle.net/WuZat/290/*/
     }
 
-    footer .wrapper {
+    #site-footer .contact-wrapper {
         width: 100%;
         text-align: center;
         margin-bottom: 1.5em;        
     }
 
-    footer h3 {
+    #site-footer h4 {
         margin-bottom: 0.3em;
     }
 }
