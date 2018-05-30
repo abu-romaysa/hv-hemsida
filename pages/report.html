@@ -153,64 +153,50 @@
                         <li>Kolumnerna innehåller kontaktinformation och varje kolumn grupperar sedan en specifik typ av denna information; adress, telefon och mejl. Varje kolumn har därutöver även en rubrik som beskriver denan gruppering av kontaktinformation. Denna struktur och gruppering av innehåll fick mig att välja det semantiska elementet "section" för att beskriva dessa kolumner. Detta element är till för att just gruppera innehåll per tema och ämnen via sektioner och att sedan definiera varje sektion med en passande rubrik. Jag har därmed och rätt självklart använt mig av heading-element och paragraf-element inom varje section-element. (W3C, W3C Recommendation, 2014)-(https://www.w3.org/TR/2014/REC-html5-20141028/sections.html#the-footer-element).</li>
                         <li>Ursprungligen var min footer uppbyggd på detta vis, men jag mötte senare utmaningen att jag behövde centrera texten i respektive sektion samtidigt som jag ville att texten skulle vara vänsterjusterad. Då CSS deklarationer inte stödjer detta - förutom, som Bernhardsson (???) nämner, flexbox deklarationer vilket vi inte har gått igenom i denna kurs - så fick jag lösa detta genom att omsluta kontaktinformationen i respektive sektion med ett div-element. Enligt W3C (2014) så ska ett element som endast behövs pga styling använda just div-element. Dessa div-element fick sedan passande nog ett klassnamn då alla dessa element skulle ha samma deklarationer och egenskaper. Enligt Chris Coyier (2013) kan en bra namngivning av en wrapper, som endast behövs för design anledningar, vara att ge suffixet "-wrap" till ett passande klassnamn. Jag fann detta vara en väldigt bra vägledning och namngav därnmed mina wrappers och div-element till "contact-wrapper" då de i själva verket omsluter kontaktinformation oavsett sektion. (Patrik Bernhardsson, handledning via Adobe Connect 14 maj 2018), (W3C, W3C Recommendation Section element, 2014)-(https://www.w3.org/TR/2014/REC-html5-20141028/sections.html#the-footer-element), (https://www.smashingmagazine.com/2013/01/css-performance-debugging-naming-conventions/).</li>
                         <li>Jag funderade på vilken nivå av rubrik jag ville använda för footern då detta inte var den viktigaste informationen och då jag inte ville störa sidans hierarkiska struktur. Å andra sidan kan denna sektion av sidan anses som oberoende och därmed själv ha sin egna logiska struktur och uppbyggnad. Jag bestämde mig för att använda h4-elementet till footerns rubriker då Michiel Heijmans (2015) anger att detta kan vara en användning av detta element om rubrikerna inte innehåller några viktiga nyckelord (troligen för rangordning för sökmotorsoptimeringen). (https://yoast.com/headings-use/) </li>
-                    </ul>                    
-                </li>
-                <li> CSS Utformningen:
-                    <ul> 
-                        <li>Enligt tidigare nämnda anledningar och argument så deklarerades float och bredd till section-elementet. Section-elementens bredd sattes till en tredjedel av den totala bredden av footer-elementet så att alla sektioner får lika mycket plats och hamnar på samma rad.</li>
-                        <li>För mina wrappers så satte jag en passande och anpassbar bredd och lät sedan webbläsaren räkna ut left och right margins via värdet "auto" för att centrera denna inom sektionen. Mer om detta har beskrivits i tidigare delar av denna rapport. Jag gjorde även innan detta ett försök att deklarera wrappern som ett inline-block-element - ett försök att låta innehållet bestämma bredden - och att sedan göra denna "auto margin" deklarering, men detta funkade inte. Enligt Adam Davies (2014) så beror detta på att båda deklarationerna dvs "auto margins" och "inline-block" försöker positionera elementet horisontellt vilket leder till en krock. Detta argument backas även upp av W3C (Recommendation, u.å.) som anger i kapitlet om uträkningar av margins för inline-block-element: "A computed value of 'auto' for 'margin-left' or 'margin-right' becomes a used value of '0'.". Ett tredje alternativ jag testade och som för den delen även fungerade med "auto margins" deklarationen var att deklarera wrappern till "display: table". Ett tips jag fick av Fahad Uddin (2016) och colosso (2012). Jag undvek detta då jag uppfattade att W3School ("HTML Layouts", u.å.) avråder från att använda tabeller till att sköta layouten, något jag i skrivandes stund upptäckt att det gäller självaste table-elementet och inte uttryckligen deklarationen.(https://www.codecademy.com/en/forum_questions/5227865580ff3350200003cd), (https://www.w3.org/TR/CSS2/visudet.html), (https://stackoverflow.com/a/9313467), (https://www.w3schools.com/html/html_layout.asp). </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
                     </ul>
                 </li>
-                <li></li>                
-                <li>h3 för ej så viktig och h3 känns som annars för bilderna</li>
-                <li>funderade på hur centrera texten - https://www.w3.org/Style/Examples/007/center.en.html#block</li><li>https://www.w3schools.com/howto/howto_css_three_columns.asp</li>
+                <li> CSS Utformningen:
+                    <ul>
+                        <li>Enligt tidigare nämnda anledningar och argument så deklarerades float och bredd till section-elementet. Section-elementens bredd sattes till en tredjedel av den totala bredden av footer-elementet så att alla sektioner får lika mycket plats och hamnar på samma rad. Detta sätt att skapa en tre-kolumn layout i CSS förespråkas även av t.ex. W2School ("How TO - Three Column Layout", u.å.). (https://www.w3schools.com/howto/howto_css_three_columns.asp)</li>
+                        <li>För mina wrappers så satte jag en passande och anpassbar bredd och lät sedan webbläsaren räkna ut left och right margins via värdet "auto" för att centrera denna inom sektionen. Mer om detta har beskrivits i tidigare delar av denna rapport och jag studerade även liknande exempel av W3C ("Centering things", u.å.). Jag gjorde även innan detta ett försök att deklarera wrappern som ett inline-block-element - ett försök att låta innehållet bestämma bredden - och att sedan göra denna "auto margin" deklarering, men detta funkade inte. Enligt Adam Davies (2014) så beror detta på att båda deklarationerna dvs "auto margins" och "inline-block" försöker positionera elementet horisontellt vilket leder till en krock. Detta argument backas även upp av W3C (Recommendation, u.å.) som anger i kapitlet om uträkningar av margins för inline-block-element: "A computed value of 'auto' for 'margin-left' or 'margin-right' becomes a used value of '0'.". Ett tredje alternativ jag testade och som för den delen även fungerade med "auto margins" deklarationen var att deklarera wrappern till "display: table". Ett tips jag fick av Fahad Uddin (2016) och colosso (2012). Jag undvek detta då jag uppfattade att W3School ("HTML Layouts", u.å.) avråder från att använda tabeller till att sköta layouten, något jag i skrivandes stund upptäckt att det gäller självaste table-elementet och inte uttryckligen deklarationen. (https://www.w3.org/Style/Examples/007/center.en.html#block), (https://www.codecademy.com/en/forum_questions/5227865580ff3350200003cd), (https://www.w3.org/TR/CSS2/visudet.html), (https://stackoverflow.com/a/9313467), (https://www.w3schools.com/html/html_layout.asp). </li>
+                    </ul>
+                </li>
             </ul>
 
             <h3>Sandbox</h3>
             <ul>
                 <li>max antal tecken/ord på en rad</li>
                 <li>Vrf Indenteringar</li>
-                <li>css reset</li>
+                
                 <li>arbetat i git för version och testa olika looks etc</li>
-                <li>egen - css fil för detta - https://www.webpagefx.com/blog/web-design/css-tip-1-resetting-your-styles-with-css-reset/</li>
-                <li>The em size unit is recommended by the W3C - https://www.w3schools.com/css/css_font.asp</li>
-                <li>margin auto så att den centrerar sig även om man ändrar strlk på skärmen - http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ - 11:30</li>
-                <li>ems why -  Ems are becoming increasingly popular in web documents due to scalability and their mobile-device-friendly nature. - https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/ - can chd base font size dvs i body...</li>
                 <li>arbetade i git och github repo - skicka länk?</li>
-                <li>försöker hålla selektorerna kort förutom där jag förbereder mig för framtiden och när jag tycker det är tydligare</li>
-                <li>wai aria - anv semantiska element</li>
                 <li>jobbat i git - om jag förlorar dator, har historik, håller bättre reda på vad jag egentligen har modifierat</li>
+                
+                <li>egen - css fil för detta - https://www.webpagefx.com/blog/web-design/css-tip-1-resetting-your-styles-with-css-reset/</li>
+                
+                <li>The em size unit is recommended by the W3C - https://www.w3schools.com/css/css_font.asp</li>
+                <li>ems why -  Ems are becoming increasingly popular in web documents due to scalability and their mobile-device-friendly nature. - https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/ - can chd base font size dvs i body...</li>
+                
+                <li>margin auto så att den centrerar sig även om man ändrar strlk på skärmen - http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ - 11:30</li>
+                
+                <li>försöker hålla selektorerna kort förutom där jag förbereder mig för framtiden och när jag tycker det är tydligare</li>
+                <li>anv mindre selektorer för optimering</li>
+                
+                <li>wai aria - anv semantiska element</li>                
                 <li>gjorde startsidan first och sedan ...</li>
                 <li>ej flex för ej gått igenom detta och ej stöds i äldre webbläsare</li>
-                <li>anv mindre selektorer för optimering</li>
-                <li>clean ode för optimering</li>
+                
+                <li>clean code för optimering</li>
                 <li></li>
             </ul>
 
             <h3>Questions</h3>
             <ul>
-                <li>vrf ej landing i id iställer för klass</li>
-                <li>breakpoints förvirrande speciellt bredd och device bredd plus att inspektorn ger andra värden än sidor</li>
-                <li>skillnad mellan upplösning och skärmstorlek</li>
-                <li>fast liten font så blir det report overflow om jag gör mindre än 600px i bredd är det acceptabelt att scrolla?</li>
-                <li>rem på html strlk som nu är 100% beroende av css resetten</li>
-                <li>var lägga vad min sida utgår ifrån för font size? html eler body</li>
                 <li></li>
                 <li></li>
                 <li></li>
             </ul>
 
-            <h3>Specifikation</h3>
-            <ul>
-                <li>Här diskuterar och argumenterar ni kring era olika val vad gäller kodningen av sidan och refererar till adekvat         litteratur.</li>
-                <li>Se till att ni ordentligt argumenterar för era kodningsval, berättar hur ni tänkt och förklarar varför ni gjort som ni gjort, och refererar till litteratur /webbsidor ni läst som kopplar till det ni skriver om.</li>
-                <li>Det är bra om ni kontinuerligt i arbetet med examinationsuppgiften skriver ner era tankar, och att ni ställer er själva frågan “varför?” när ni förklarar era kodningsval. 
-                "Exempelvis kan man skriva “Jag använde mig av en ul-lista för min meny”. Sluta inte texten där, utan det är mer intressant att vi får veta varför ni använde en ul-lista. Har ni läst någonstans att detta är bäst sätt? Skriv då ner detta som en referens. Finns det alternativ till en ul-lista för menyn?"</li>
-                <li>Använd texten som ett verktyg för att visa vad ni kan och vad ni har läst i ämnet.</li>
-            </ul>
         </main>
         
         <footer id="site-footer" class="cf">

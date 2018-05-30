@@ -122,10 +122,11 @@ table {
 
 html {
     height: 100%;
+    font-size: 18px;
 }
 
 body {
-    font-size: 18px; /* TODO ref på vrf bra som handledning och artikel w3 kanske*/
+    //font-size: 18px; /* TODO ref på vrf bra som handledning och artikel w3 kanske*/
     background: #f0f0f0; /*TODO kolla caniuse*/
     min-height: 100%;
     font-family: Helvetica, Arial, "sans-serif";
@@ -378,11 +379,15 @@ main .column p:first-of-type {
 }
 
 #site-footer section {
+    
+    /* skapar en tre-kolumn layout */
     width: 33.3%;
     float: left;
 }
 
 #site-footer .contact-wrapper {
+    
+    /* centrerar texten och bevarar dess vänsterjustering */
     width: 50%;
     margin-right: auto;
     margin-left: auto;
@@ -412,20 +417,23 @@ main .column p:first-of-type {
 @media only screen and (max-width: 600px),
             screen and (max-device-width: 600px) {
 
-    body {
+    html {
         font-size: 16px;
-    } /*TODO remove - just for testing*/
+    }
+            
+    body {
+        background: white; /*så texten så går ut ej går ut mot en annan färg som visar missen mer*/        
+    }
 
     #site-header {
         background-image: url(../images/notebook-and-pen-mobile-version.jpg);
         /*bilden 3 ggr mindre - 35% mindre*/
         min-height: 200px;
-        
     }
 
     .landing-page #site-header {
         background-image: url(../images/nature-light-bulb-mobile-version.jpg);
-        /*ca 30% mindre i lagringsstrlk*/        
+        /*ca 30% mindre i lagringsstrlk*/
     }
 
     #site-header h1 {
@@ -434,11 +442,11 @@ main .column p:first-of-type {
         text-align: center;
     }
 
-    #site-header nav {        
+    #site-header nav {
         float: none;
-        text-align: center;        
+        text-align: center;
     }
-                
+
     #site-header nav ul {
         padding-left: 0; /*ser bättre ut när man har minsta strlk på skärmen*/
     }
@@ -455,6 +463,7 @@ main .column p:first-of-type {
         margin: 0px;
         padding: 20px;
         /*kolla textstorlek på sidan*/
+        box-shadow: none;
     }
 
     .landing-page main {
@@ -471,6 +480,15 @@ main .column p:first-of-type {
         float: none;
         width: 100%;
     }
+                
+    main ul {
+        list-style-type: none;
+        padding-left: 0;        
+    }
+                
+    main li {
+        margin-bottom: 1em;                
+    }
 
     #site-footer {
         padding-top: 1.5em;
@@ -485,7 +503,7 @@ main .column p:first-of-type {
     #site-footer .contact-wrapper {
         width: 100%;
         text-align: center;
-        margin-bottom: 1.5em;        
+        margin-bottom: 1.5em;
     }
 
     #site-footer h4 {
