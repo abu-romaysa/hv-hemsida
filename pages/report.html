@@ -7,8 +7,8 @@
         <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="../styles/main.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../styles/main.css" media="print" rel="stylesheet"  type="text/css"  />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="../styles/main.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -34,19 +34,23 @@
                 <li>hyphen</li>
                 <li>git - diff - gå tillbaks - labba enkelt</li>
                 <li>länk till github</li>
-                <li></li>
+                <li>språk en</li>
                 <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
             </ul>
             
-            <h3>Fonter</h3>
+            <h3>Typsnitt och storlek</h3>
             <ul>
-                <li>header - font comfortaa rounded and intended for large sizes</li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Enligt Kyle Schaeffer (2008) så har em enheten för font storlek blivit alltmer populär pga dess skalbarhet och dess mobilvänliga natur. Em storleken är även rekommenderad av W3School ("CSS Fonts", u.å.) och de nämner vidare att många utvecklare använder denna enhet för att den tillåter användare att ändra storleken på texten i webbläsarens meny. Dessa argument och främst att den är enkelt skalbar gjorde att jag valde att använda denna enhet. I och med att em storlekarna på min text är relativa till varandra och slutligen till dokumentets satta font storlek så kan jag enkelt ändra på hela min sidas text storlekar genom att endast ändra på dokumentets font storlek. Förändringen kommer därmed att ändra all text storlek med samma förhållande som tidigare. Denna funktion kommer till stor användning då jag vid mobilversionen vill ha en mindre text och samtidigt bevara förhållandet mellan all text som olika nivåer av rubriker och brödtexten. (https://kyleschaeffer.com/ development/css-font-size-em-vs-px-vs-pt-vs/), (https://www.w3schools.com/css/ css_font.asp)</li>
+                <li>Jason Santa Maria ("On Web Typography", 2012) nämner en princip under en föreläsning om typografi: "readibility is not if you can read, but if you want to read it". Detta fick mig att tänka på att jag alltid blir uppmuntrad till att läsa text som har en större font storlek och med luftiga avstånd mellan textraderna. Jag valde därmed att min sida skulle utgå ifrån 18 pixlar. Då Christian Ohlsson ("Tips och trix", 2016) tipsar om att man kan inspireras och kolla på hur andra sidor är uppbyggda så gick jag till Aftonbladet för att finna inspiration på vilket avstånd jag ska ha mellan mina textrader. Detta då jag finner Aftonbladet vara en sida med text som man trivs att läsa i samtidigt som att de vill locka läsare med en användarvänlig läsbarhet.  Resultatet blev att jag i och med dett valde en line-height för min brödtext till 1.3em. (https://vimeo.com/34178417#), (http://media.hv.se/kurser/imcoh/webbutveckling-med-html-och-css/tips-och-trix/) </li>
+                <li>I och med att CSS resetten sätter font storleken på min sida på html-elementet så placerade jag bas font storleken på detta element. Detta är enligt Patrick Sexton (2016) vanligtvis sättet man gör detta på (html-elementet eller body-elementet) och han nämner att detta även är vad Google rekommenderar. En annan fördel med detta jag senare upptäckte var att font storlekar uttryckta i rem enheten utgår ifrån html-elementets deklaration och inte body-elementets deklaration. (https://varvy.com/mobile/legible-font-size.html)</li>
+                <li>För min mobilversion så ville jag däremot att texten skulle utgå ifrån en mindre font storlek och ändrade därmed bas font storleken till 16px. I och med användningen av den skalbara enheten em så ändras alla storlekar på rubriker och brödtexten som resultat av detta och i rätt relativ förhållande till varandra. Här såg jag verkligen styrkan i att ha använt denna enhet vilket fick mig mer övertygad om att detta var enheten jag verkligen skulle använda och behålla i min hemsida. För att ytterligare rendera texten snyggare och mer passande i mobilenheten så kombineras detta - enligt Christian Ohlson (30-05-2018) och W3School ("Responsive Web Design - The Viewport", u.å.) - med ta kontroll av enhetens viewport för att sedan tala om för mobilens webbläsare att utgå ifrån enhetens normala standardstorlek. Obs. Detta samverkar därmed med min bas font storlek satt på html-elementet. (handledning via Adobe Connect, 2018-05-30), (https://www.w3schools.com/css/css_rwd_viewport.asp)</li>
+                <li>Jag använde Google fonts för att hämta typsnitt till rubriker och brödtexten. Som Catalin Rosu (2010) nämner så är fördelarna med denna tjänst - i jämförelse med om jag hade valt @font-face - att den är enklare att sätta upp och implementera och att man inte behöver tänka på licenser. Visst kan den ha mindre typsnitt att välja mellan men den har gått och väl för att jag ska kunna uppnå mitt arbete. Google fonts tjänst kommer automatiskt inte heller att hämta typsnittet förutom om besökarens dator inte redan har denna på sin dator. (https://catalin.red/google-font-api-and-typekit-solutions-vs-font-face/)</li>
+                <li>Jason Santa Maria ("On Web Typography", 2012) nämner även att man ska tänka på att använda fonter??? till det de är ämnade för, så att en font som är ämnad för större text (som en rubrik) inte används som brödtext. I och med detta försökte jag läsa på för de fonter jag valde så att dessa används korrekt på min sida. T.ex. så valde jag "Comfortaa" för min stora text (h1-elementet) för mitt namn för att denna är avsedd för just stora texter och för att den har det fina rundade utseendet jag var ute efter. Jag valde däremot att använda den traditionella "Helvetica" fonten för header texten om mig då denna bättre syndes framför bakgrunsbilden och var passande för längre text.(https://vimeo.com/34178417#) </li>
+                <li>Största utmaningen med att använda enheten em var att ställa font storleken på nästade listor i en annan lista. I och med att em enheten funkar så att den relativt sätter storleken till förhållande till dess förälder så ledde en font storlek på annat än "1em" och för en enkel ul-selektor till att den nästlade listan fick en annan font storlek än dess förälderlista. Enligt Adrian Sandu ("Understanding and Using rem Units in CSS", 2015) kan detta lösas genom att man gör en separat deklaration för att täcka varje nästlade fall och att deklarera dessa font storlekar till "1em" vilket kommer att sätta samma storlek för den nästlade listan som sin förälderlista. En annan lösning som också diskuterades i samma artikel var att helt enkelt bara använda enheten rem för en enkel ul-selektor deklaration. Denna deklaration täcker alla nästlade fall av listor och kommer sätta samma font storlek för dem alla. Detta pga av rem enheten utgår ifrån rot font storleken dvs i mitt fall bas font storleken satt i html-elementet och inte utgår ifrån förälderns font storlek som i fallet av em. Jag beslutade att använda den första lösningen då jag ville ha en mer enhetlig använding av enheten för font storlekars - i detta fall em - och att jag inte planerade att ha flera nästlade listor i varandra. (https://www.sitepoint.com/understanding-and-using-rem-units-in-css/)</li>
+                <li>TODO? Helvetica</li>                
             </ul>
     
             <h3>CSS Reset</h3>
@@ -173,10 +177,7 @@
                 <li>jobbat i git - om jag förlorar dator, har historik, håller bättre reda på vad jag egentligen har modifierat</li>
                 
                 <li>egen - css fil för detta - https://www.webpagefx.com/blog/web-design/css-tip-1-resetting-your-styles-with-css-reset/</li>
-                
-                <li>The em size unit is recommended by the W3C - https://www.w3schools.com/css/css_font.asp</li>
-                <li>ems why -  Ems are becoming increasingly popular in web documents due to scalability and their mobile-device-friendly nature. - https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/ - can chd base font size dvs i body...</li>
-                
+                                
                 <li>margin auto så att den centrerar sig även om man ändrar strlk på skärmen - http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ - 11:30</li>
                 
                 <li>försöker hålla selektorerna kort förutom där jag förbereder mig för framtiden och när jag tycker det är tydligare</li>

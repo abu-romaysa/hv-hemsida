@@ -125,8 +125,7 @@ html {
     font-size: 18px;
 }
 
-body {
-    //font-size: 18px; /* TODO ref på vrf bra som handledning och artikel w3 kanske*/
+body {    
     background: #f0f0f0; /*TODO kolla caniuse*/
     min-height: 100%;
     font-family: Helvetica, Arial, "sans-serif";
@@ -155,7 +154,7 @@ h3, h4 {
 
 p, ul {
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.3em; /*ur länk ovan 10:40*/
+    line-height: 1.3em;
     font-size: 1.2em;
 }
 
@@ -212,10 +211,10 @@ ul {
 }
 
 #site-header nav {
-    float: right;    
-    margin-right: 2%; /* obs! samma som h1 textens avstånd till ytterkanten */    
+    float: right;
+    margin-right: 2%; /* obs! samma som h1 textens avstånd till ytterkanten */
     text-transform: uppercase; /*These properties are supported in effectively all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)*/
-    font-family: 'Comfortaa', cursive;    
+    font-family: 'Comfortaa', cursive;
 }
 
 #site-header nav ul {
@@ -414,15 +413,14 @@ main .column p:first-of-type {
 /* Note: Small devices (portrait tablets and large phones, 600px and up (till 768)) */
 /*Källa: https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
 /*https://css-tricks.com/snippets/css/media-queries-for-standard-devices/*/
-@media only screen and (max-width: 600px),
-            screen and (max-device-width: 600px) {
+@media only screen and (max-width: 800px) {
 
     html {
         font-size: 16px;
     }
-            
+
     body {
-        background: white; /*så texten så går ut ej går ut mot en annan färg som visar missen mer*/        
+        background: green; /*så texten så går ut ej går ut mot en annan färg som visar missen mer*/        
     }
 
     #site-header {
