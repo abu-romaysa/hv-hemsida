@@ -148,8 +148,12 @@ h2 {
     text-align: center;
 }
 
-h3, h4 {
+h3 {
     font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.3em;
 }
 
 p, ul {
@@ -297,7 +301,7 @@ main ul {
     font-size: 1.3em;
 }
 
-main ul ul { /*https://www.sitepoint.com/understanding-and-using-rem-units-in-css/*/
+main ul ul {
     font-size: 1em;
 }
 
