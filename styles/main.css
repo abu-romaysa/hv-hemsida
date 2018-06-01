@@ -198,7 +198,7 @@ ul {
     background-blend-mode: multiply;
 }
 
-.landing-page #site-header {
+#landing-page #site-header {
     background-image: url(../images/nature-light-bulb.jpg);
     background-color: lightgray;
 }
@@ -278,7 +278,7 @@ main {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.landing-page main {    
+#landing-page main {    
     width: 80%;
     
     /* använd samma färg som dess förälder body */
@@ -433,7 +433,7 @@ main .column p:first-of-type {
         min-height: 200px;
     }
 
-    .landing-page #site-header {
+    #landing-page #site-header {
         background-image: url(../images/nature-light-bulb-mobile-version.jpg);
         /*ca 30% mindre i lagringsstrlk*/
     }
@@ -468,7 +468,7 @@ main .column p:first-of-type {
         box-shadow: none;
     }
 
-    .landing-page main {
+    #landing-page main {
         margin-bottom: 7%;
         margin-left: auto;
         margin-right: auto;
@@ -518,7 +518,7 @@ main .column p:first-of-type {
         display: none;
     }
 
-    #site-header, .landing-page #site-header {
+    #site-header, #landing-page #site-header {
         background-image: none;
     }
 }
