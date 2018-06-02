@@ -229,7 +229,10 @@ main img, #site-footer {
 
 #site-header nav {
     float: right;
-    margin-right: 2%; /* obs! samma som h1 textens avstånd till ytterkanten */
+    
+    /* obs. för enhetligt utseende så samma avstånd används av h1-elementet för sin vänstra marginal */
+    margin-right: 2%;
+
     text-transform: uppercase; /*These properties are supported in effectively all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)*/    
 }
 
@@ -239,7 +242,7 @@ main img, #site-footer {
 
 #site-header li { /* TODO lägga till nav? och obs att ul tagits bort, rätt? */
     display: inline-block;
-    margin-left: 20px; /* % gav egen rad dvs för mkt förutom ca 0.001 typ */
+    margin-left: 20px;
 }
 
 #site-header nav a { /* TODO radera nav för att endast få ner till tre nivåer? optimering? */
@@ -250,7 +253,7 @@ main img, #site-footer {
     /* ta bort understrykningen av länktexten */
     text-decoration: none;
 
-    padding: 0.2em; /*% gav egen rad*/
+    padding: 0.2em;
 }
 
 #site-header ul a:hover {
@@ -278,7 +281,7 @@ main {
     margin: 4% auto;
     background: white;
     padding: 50px 100px;
-    /*padding: 2.7em 5.5em;*/
+    /*TODO padding: 2.7em 5.5em;*/
 
     /*display: flex;*/ /*verkar förstöra float mekanismen men har box sizing i sig?*/
     /*samma höjd på kolumner*/
@@ -333,7 +336,7 @@ main .column {
     float: left;
 
     /* top värdet i pixlar då detta har ett hårt beroende av bildens storlek och positionering */
-    padding: 130px 2.5% 2.5% 2.5%;  /*% blir mindre när kolumnerna blir - px för relation till bild*/
+    padding: 130px 2.5% 2.5% 2.5%;
 
     margin-left: 1%;
     margin-right: 1%;
@@ -458,7 +461,7 @@ main .column p:first-of-type {
     }
 
     #site-header nav ul {
-        padding-left: 0; /*ser bättre ut när man har minsta strlk på skärmen*/
+        padding-left: 0;
     }
 
     #site-header p {
