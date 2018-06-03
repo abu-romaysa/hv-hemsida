@@ -195,6 +195,7 @@ main img, #site-footer {
     background-color: gray;
 
     /* obs. deklarerad efter bakgrundsfärgen för att synas i webbläsare som ej stödjer "blend-mode multiply" */
+    /* https://pixabay.com/sv/bok-anteckningsbok-l%C3%A4mna-1945426 */
     background-image: url(../images/notebook-and-pen.jpg);
 
     /* centrera alltid horisontellt och vertikallt */
@@ -214,6 +215,7 @@ main img, #site-footer {
     background-color: lightgray;
 
     /* obs. deklarerad efter bakgrundsfärgen för att synas i webbläsare som ej stödjer "blend-mode multiply" */
+    /* https://pixabay.com/sv/gl%C3%B6dlampa-blad-klorofyll-gr%C3%B6n-2631864 */
     background-image: url(../images/nature-light-bulb.jpg);
 }
 
@@ -355,19 +357,23 @@ main img {
     
     /* positionerar alla bilder relativt till dess kolumner och flyttar här upp bilderna från dess normala position  */
     position: absolute;
-    top: -130px;    
+    top: -130px;
 }
 
 main img.my-home {
 
     /* vänsterjustera bilden i dess kolumn */
     left: 0px;
+    
+    /* https://stocksnap.io/photo/F6G5H326K5 */
 }
 
 main img.my-equipment {
 
     /* högerjustera bilden i dess kolumn */
     right: 0px;
+    
+    /* https://stocksnap.io/photo/VD8VMOR1EZ */
 }
 
 main img.my-time {
@@ -375,6 +381,8 @@ main img.my-time {
     /* centrerar bilden horisontellt genom relativa värden till bildens förälder och bredd */
     left: 50%;
     transform: translate(-50%);
+    
+    /* https://pixabay.com/sv/b%C3%B6cker-fickur-begagnade-gamla-tid-2385402 */
 }
 
 /* stilar första paragrafen i kolumnerna som ska vara en ingress */
