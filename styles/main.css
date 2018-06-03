@@ -125,8 +125,11 @@ html {
     font-size: 18px;
 }
 
-body {    
-    background: #f0f0f0; /*TODO kolla caniuse*/
+body {
+    
+    /* HTML Gainsboro ur MIT:s X11 standard */
+    background: #f0f0f0;
+
     min-height: 100%;
     font-family: Helvetica, Arial, "sans-serif";
     color: #222;
@@ -434,10 +437,7 @@ main .column p:first-of-type {
 *
 *********************/
 
-/* For mobile phones - Extra small devices (phones, 600px and down)*/
-/* Note: Small devices (portrait tablets and large phones, 600px and up (till 768)) */
-/*Källa: https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
-/*https://css-tricks.com/snippets/css/media-queries-for-standard-devices/*/
+/* mobilversionen och mindre desktop skärmar */
 @media only screen and (max-width: 800px) {
 
     html {
@@ -445,7 +445,13 @@ main .column p:first-of-type {
     }
 
     body {
-        background: green; /*så texten så går ut ej går ut mot en annan färg som visar missen mer*/
+        background: white;
+    }
+
+    #landing-page {
+
+        /* HTML Gainsboro ur MIT:s X11 standard */
+        background: #f0f0f0;
     }
 
     #site-header {
@@ -458,42 +464,52 @@ main .column p:first-of-type {
     }
 
     #site-header h1 {
+
+        /* horisontellt centrering */
         margin-left: 0px;
         float: none;
         text-align: center;
     }
 
     #site-header nav {
+
+        /* centrerar navigeringsmenyn horisontellt */
         float: none;
         text-align: center;
     }
 
     #site-header nav ul {
+
+        /* så att navigeringsmenyn horisontellt centreras korrekt */
         padding-left: 0;
     }
 
     #site-header p {
         margin: 0.5em auto 2em;
-        font-weight: bold; /*så texten syns bättre framför bilden*/        
-        /*text-align: justify; - rivers! */
-        width: 80%; /*som main 80 aligned snyggare, ser naturligare ut än mindre rader då lite rivers och ser konstigare ut*/
+        font-weight: bold;
+
+        /* obs. samma bredd som main-elementet och därmed även kolumnen */
+        width: 80%;
     }
 
-    main { /*för report sidan - TOSDO ff text overflow*/
+    main {
         width: 100%;
         margin: 0px;
         padding: 20px;
-        /*kolla textstorlek på sidan*/
         box-shadow: none;
     }
 
     #landing-page main {
+
+        /* centrerar main-elementet och därmed även kolumnen */
         margin-bottom: 7%;
         margin-left: auto;
         margin-right: auto;
     }
 
     main .about-my-home, main .about-my-development {
+
+        /* döljer dessa två kolumner */
         display: none;
     }
 
@@ -501,14 +517,16 @@ main .column p:first-of-type {
         float: none;
         width: 100%;
     }
-                
+
     main ul {
+
+        /* presenterar texten som vanlig text och inte i en punktlista */
         list-style-type: none;
-        padding-left: 0;        
+        padding-left: 0;
     }
-                
+
     main li {
-        margin-bottom: 1em;                
+        margin-bottom: 1em;
     }
 
     #site-footer {
@@ -516,12 +534,15 @@ main .column p:first-of-type {
     }
 
     #site-footer section {
+
+        /* staplar kolumnerna ovanför varandra */
         float: none;
         width: 100%;
-        /*box-shadow: 0px 24px 3px -25px white;*/ /*streck mellan*/ /*http://jsfiddle.net/WuZat/290/*/
     }
 
     #site-footer .contact-wrapper {
+        
+        /* centrerar kontaktinformationen */
         width: 100%;
         text-align: center;
         margin-bottom: 1.5em;
@@ -532,7 +553,9 @@ main .column p:first-of-type {
     }
 }
 
+/* utskriftsversionen */
 @media print {
+
     nav {
         display: none;
     }
