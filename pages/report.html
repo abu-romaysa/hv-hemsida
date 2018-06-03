@@ -150,7 +150,7 @@
                 <li>Lösningen för positioneringen av bilderna blev användandet av absolut positionering. Ett absolut positionerat element positioneras relativt till dess närmaste positionerade förälder (W3School, "CSS Layout - The position Property, "u.å.). Jag ville att bilderna skulle positioneras relativt till deras respektive kolumn då de i själva verket skulle sticka ovanför kolumnerna. Därmed angav jag kolumnerna/div-elementen som ankarpunkt genom att deklarera i dess klass ".column" "position: relative" (om ingen positionerad förälder existerar så kommer denna att utgå från viewporten). I och med att jag sedan inte anger någon offset så kommer dessa div-element ligga kvar i sin normala position. Bildernas img-element deklarerades sedan till "position: absolute" som leder till att bilderna kommer att flyta ovanför det normala flödet av dokumentet och att övrigt innehåll kan ta upp det utrymmet bilderna lämnar efter sig. Valde ett passande negativt offset värde för positionerings deklarationen "top" för att flytta upp bilden från sin normala position. Övriga klasser skapades sedan för högra och vänstra kolumnen för att absolut positionera dessa i respektive önskad riktning. Klasserna kan sedan återanvändas (och troligen byta namn) om jag i framtiden skulle ville skapa fler kolumner med samma egenskaper och layout. Jag lade till en passande "padding-top" deklaration för att flytta ned texten så att denna inte låg bakom bilderna.</li>
                 <li>Sista utmaningen blev att centrera den mellersta kolumnens bild som nu var absolut positionerad. Jag ville inte använda några fasta offset värden i pixlar då bredden kommer att ändras i och med olika skärmstorlekar och därmed även i min responsiva design. Enligt Alan ("How to center absolutely positioned element in div?", 2016) kunde man - förutsatt att elementet är deklarerad att vara ett block-element - sätta offset värdet noll för egenskaperna "left" och "right" och sedan värdet "auto" för de horisontella margins. Jag fastnade däremot för det som Vadim Ovchinnikov (2017) och ProblemsOfSumit (2014) förespråkar och anser vara den responsiva lösningen då man anger två relativa värden för bilden; ett värde (här för left-egenskapen) relativt till dess förälder och ett annat (här för transform-egenskapen) relativt till elementets bredd. I och med detta så hamnar bilden centrerad horisontellt. För övrigt så har transform-egenskapen enligt "Can I use" (2018) gott stöd (ca 94%) bland olika webbläsare förutom Opera Mini.</li>
                 <li>Jag ville att första paragrafen i en kolumn skulle vara en ingress som hade sitt eget utseende. Jag ville inte emfasera denna information, vilket ledde till att jag inte placerade denna text i ett em- eller strong-element i HTML dokumentet, utan bara fetmarkera denna. I och med detta använde jag mig av det som enligt W3C ("Selectors Level 4", 2018) kallas för en "struktuell pseudo-klass". I detta fall var det ":first-of-type". Jag var tvungen att använda denna och inte ":first--child" för att beskriva att relationen till dess förälder är att denna paragraf är den första förekomsten av en paragraf hos denna förälder. ":first-child" ger endast en träff om paragrafen är det första barnet av förälder-elementet vilket inte är sant i mitt fall, utan det är img-elementet.</li>
-                <li>Vidare kan jag nämna att jag fann att kolumnernas höjd blev lika höga oavsett dess innehåll om jag deklarerade dess förälder till ett så kallat flex element ("display: flex"). Detta gör att förälder elementet och dess barn element blir så kallade flex-element. Jag upptäckte även att detta inaktiverade float egenskaperna och hade sina egna "box-sizing" inställningar. Detta var faktiskt en lösning jag fann av OJFord (2014) och Trong Lam Phan (2014). Trots att detta gav ett snyggare utseende och att jag kunde invaktivera denna egenskap vid behov (t.ex. vid mobilversionen) så valde jag att undvika detta då detta inte har varit en del av denna kurs och faktumet att jag inte har bra koll på hur detta fungerar och ville därmed utgå ifrån det jag har kontroll över tills vidare.</li>
+                <li>Vidare kan jag nämna att jag fann att kolumnernas höjd blev lika höga (då dagens design ej sätter en höjd utan låter innehålet bestämma) oavsett dess innehåll om jag deklarerade dess förälder till ett så kallat flex element ("display: flex"). Detta gör att förälder elementet och dess barn element blir så kallade flex-element. Jag upptäckte även att detta inaktiverade float egenskaperna och hade sina egna "box-sizing" inställningar. Detta var faktiskt en lösning jag fann av OJFord (2014) och Trong Lam Phan (2014). Trots att detta gav ett snyggare utseende och att jag kunde invaktivera denna egenskap vid behov (t.ex. vid mobilversionen) så valde jag att undvika detta då detta inte har varit en del av denna kurs och faktumet att jag inte har bra koll på hur detta fungerar och ville därmed utgå ifrån det jag har kontroll över tills vidare.</li>
             </ul>
 
             <h3>Sidfoten</h3>
@@ -162,7 +162,6 @@
                 <li>Ursprungligen var min footer uppbyggd på detta vis, men jag mötte senare utmaningen att jag behövde centrera texten i respektive sektion samtidigt som jag ville att texten skulle vara vänsterjusterad. Då CSS deklarationer inte stödjer detta - förutom, som Bernhardsson(4) nämner, flexbox deklarationer vilket vi inte har gått igenom i denna kurs - så fick jag lösa detta genom att omsluta kontaktinformationen i respektive sektion med ett div-element. Enligt W3C ("The section element", 2014) så ska ett element som endast behövs pga stilning använda just div-element. Dessa div-element fick sedan passande nog ett klassnamn då alla dessa element skulle ha samma deklarationer och egenskaper. Enligt Chris Coyier ("CSS Performance, Debugging, Naming Conventions", 2013) kan en bra namngivning av en wrapper, som endast behövs för design anledningar, vara att ge suffixet "-wrap" till ett passande klassnamn. Jag fann detta vara en väldigt bra vägledning och namngav därmed mina wrappers/div-element till "contact-wrapper" då de i själva verket omsluter kontaktinformation oavsett sektion.</li>
                 <li>Jag funderade på vilken nivå av rubrik jag ville använda för footern då detta inte var den viktigaste informationen och då jag inte ville störa sidans hierarkiska struktur. Å andra sidan kan denna sektion av sidan anses som oberoende och därmed själv ha sin egna logiska struktur och uppbyggnad. Jag bestämde mig för att använda h4-elementet till footerns rubriker då Michiel Heijmans ("Headings and why you should use them", 2015) anger att detta kan vara en användning av detta element om rubrikerna inte innehåller några viktiga nyckelord (troligen för rangordning för sökmotorsoptimeringen).</li>
             </ul>
-
             <h4>CSS Utformningen</h4>
             <ul>
                 <li>Enligt tidigare nämnda anledningar och argument så deklarerades "float" och bredd till section-elementet. Section-elementens bredd sattes till en tredjedel av den totala bredden av footer-elementet så att alla sektioner får lika mycket plats och hamnar på samma rad. Detta sätt att skapa en tre-kolumn layout i CSS förespråkas även av W3School ("How TO - Three Column Layout", u.å.).</li>
@@ -181,96 +180,95 @@
             </ul>
 
             <h3>Referenslista</h3>
-            <ul>                
+            <ul>
                 <li>visheshd (2017). "The kebab case". [Elektronisk]. Tillgänglig: https://causecode.com/the-kebab-case-why-conventions-matter-especially-as-an-engineering-team/ [2018-06-01]</li>
-                <li>Magento DevDocs (u.å.). "HTML style guide". [Elektronisk]. Tillgänglig: https://devdocs.magento.com/guides/v2.2/coding-standards/code-standard-html.html [2018-06-01]</li>
-                <li>Richard Ishida (2009). "Språk på webben". [Elektronisk]. Tillgänglig: https://www.w3.org/International/getting-started/language [2018-06-02]</li>
-                <li>Patrick Cox (2014). "Top 10 Reasons to Use HTML5 Right Now". [Elektronisk]. Tillgänglig: https://tympanus.net/codrops/2011/11/24/top-10-reasons-to-use-html5-right-now/ [2018-06-02]</li>
-                <li>Chris Coyier (2008). "12 Principles For Clean HTML Code". [Elektronisk]. Tillgänglig: https://www.smashingmagazine.com/2008/11/12-principles-for-keeping-your-code-clean/ [2018-06-02]</li>
-                <li>Harry Roberts (2011). "Writing efficient CSS selectors". [Elektronisk]. Tillgänglig: https://csswizardry.com/2011/09/writing-efficient-css-selectors/ [2018-06-02]</li>
-                <li>Kyle Schaeffer (2008). "CSS Font-Size: em vs. px vs. pt vs. percent". [Elektronisk]. Tillgänglig: https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/ [2018-06-02]</li>
-                <li>Patrick Sexton (2016). "Use legible font sizes". [Elektronisk]. Tillgänglig: https://varvy.com/mobile/legible-font-size.html [2018-06-02]</li>
+                <li>Magento DevDocs (u.å.). "HTML style guide". [Elektronisk]. Tillgänglig: https://devdocs.magento. com/guides /v2.2/coding-standards/code-standard-html.html [2018-06-01]</li>
+                <li>Richard Ishida (2009). "Språk på webben". [Elektronisk]. Tillgänglig: https://www.w3.org/ International/ getting-started/language [2018-06-02]</li>
+                <li>Patrick Cox (2014). "Top 10 Reasons to Use HTML5 Right Now". [Elektronisk]. Tillgänglig: https://tympanus.net/ codrops/2011 /11/24/top-10-reasons-to-use-html5-right-now/ [2018-06-02]</li>
+                <li>Chris Coyier (2008). "12 Principles For Clean HTML Code". [Elektronisk]. Tillgänglig: https://www. smashingmagazine.com /2008/11/12-principles-for-keeping-your-code-clean/ [2018-06-02]</li>
+                <li>Harry Roberts (2011). "Writing efficient CSS selectors". [Elektronisk]. Tillgänglig: https://csswizardry.com /2011/09/ writing-efficient-css-selectors/ [2018-06-02]</li>
+                <li>Kyle Schaeffer (2008). "CSS Font-Size: em vs. px vs. pt vs. percent". [Elektronisk]. Tillgänglig: https://kyleschaeffer.com/ development/css-font-size-em-vs-px-vs-pt-vs/ [2018-06-02]</li>
+                <li>Patrick Sexton (2016). "Use legible font sizes". [Elektronisk]. Tillgänglig: https://varvy.com/mobile/ legible-font-size.html [2018-06-02]</li>
                 <li>Catalin Rosu (2010). "Google Font API and Typekit solutions VS @font-face". [Elektronisk]. Tillgänglig: https://catalin.red/google-font-api-and-typekit-solutions-vs-font-face/ [2018-06-02]</li>
                 <li>Catalin Rosu (2011). "How to create slick effects with CSS3 box-shadow". [Elektronisk]. Tillgänglig: https://catalin.red/how-to-create-slick-effects-with-css3-box-shadow/ [2018-06-02]</li>
-                <li>Adrian Sandu (2015). "Understanding and Using rem Units in CSS". [Elektronisk]. Tillgänglig: https://www.sitepoint.com/understanding-and-using-rem-units-in-css/ [2018-06-02]</li>
-                <li>Robert Mening (2017). "15 Best Web Safe Fonts". [Elektronisk]. Tillgänglig: https://websitesetup.org/web-safe-fonts-html-css/ [2018-06-02]</li>
+                <li>Adrian Sandu (2015). "Understanding and Using rem Units in CSS". [Elektronisk]. Tillgänglig: https://www.sitepoint.com/ understanding-and-using-rem-units-in-css/ [2018-06-02]</li>
+                <li>Robert Mening (2017). "15 Best Web Safe Fonts". [Elektronisk]. Tillgänglig: https://websitesetup.org/ web-safe-fonts-html-css/ [2018-06-02]</li>
                 <li>Chris Coyier (2011). "Sans-serif". [Elektronisk]. Tillgänglig: https://css-tricks.com/sans-serif/ [2018-06-02]</li>
                 <li>Chris Coyier (2014). "Basics of CSS Blend Modes". [Elektronisk]. Tillgänglig: https://css-tricks.com/basics-css-blend-modes/ [2018-06-02]</li>
-                <li>CSS Newbies. "2008". [Elektronisk]. Tillgänglig: https://cssnewbie.com/margins-and-padding-use/#.WxKHFlUzYwF [2018-06-02]</li>
-                <li>Nicolas Gallaghers (2011). "A new micro clearfix hack". [Elektronisk]. Tillgänglig: http://nicolasgallagher.com/micro-clearfix-hack/ [2018-06-02]</li>
+                <li>CSS Newbies. "2008". [Elektronisk]. Tillgänglig: https://cssnewbie.com /margins-and-padding-use/#.WxKHFlUzYwF [2018-06-02]</li>
+                <li>Nicolas Gallaghers (2011). "A new micro clearfix hack". [Elektronisk]. Tillgänglig: http://nicolasgallagher.com /micro-clearfix-hack/ [2018-06-02]</li>
                 <li> Marie Mosley (2010). "Box Sizing". [Elektronisk]. Tillgänglig: https://css-tricks.com/box-sizing/ [2018-06-02]</li>
-                <li>greggman (2015). "CSS set li indent". [Elektronisk]. Tillgänglig: https://stackoverflow.com/a/28597518 [2018-06-02]</li>
+                <li>greggman (2015). "CSS set li indent". [Elektronisk]. Tillgänglig: https://stackoverflow.com /a/28597518 [2018-06-02]</li>
                 <li>Chris Coyier (2007). "ID Your Body For Greater CSS Control and Specificity". [Elektronisk]. Tillgänglig: https://css-tricks.com/id-your-body-for-greater-css-control-and-specificity/ [2018-06-02]</li>
-                <li>Jennifer Kyrnin (2017). "Grouping Multiple CSS Selectors". [Elektronisk]. Tillgänglig: https://www.lifewire.com/grouping-multiple-css-selectors-3467065 [2018-06-02]</li>
-                <li>Six Revisions (2014). "Responsive Full Background Image Using CSS". [Elektronisk]. Tillgänglig: https://www.webpagefx.com/blog/web-design/responsive-background-image/ [2018-06-02]</li>
+                <li>Jennifer Kyrnin (2017). "Grouping Multiple CSS Selectors". [Elektronisk]. Tillgänglig: https://www.lifewire.com /grouping-multiple-css-selectors-3467065 [2018-06-02]</li>
+                <li>Six Revisions (2014). "Responsive Full Background Image Using CSS". [Elektronisk]. Tillgänglig: https://www.webpagefx.com /blog/ web-design/responsive-background-image/ [2018-06-02]</li>
                 <li>Jonpolygon (u.å.). "Perfect CSS Link Hover Colors". [Elektronisk]. Tillgänglig: https://jonpolygon.com/css-hover-link-colors/ [2018-06-02]</li>
-                <li>MDN web docs (2018). "img: The Image Embed element". [Elektronisk]. Tillgänglig: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img [2018-06-02]</li>
+                <li>MDN web docs (2018). "img: The Image Embed element". [Elektronisk]. Tillgänglig: https://developer.mozilla. org/en-US/docs/Web/HTML/ Element/img [2018-06-02]</li>
                 <li>Cris Coyier (2008). "The Difference Between ID and Class". [Elektronisk]. Tillgänglig: https://css-tricks.com/the-difference-between-id-and-class/ [2018-06-02]</li>
-                <li>Louis Lazaris (2009). "The Mystery Of The CSS Float Property". [Elektronisk]. Tillgänglig: https://www.smashingmagazine.com/2009/10/the-mystery-of-css-float-property/ [2018-06-02]</li>
-                <li>Alan (2016). "How to center absolutely positioned element in div?". [Elektronisk]. Tillgänglig: https://stackoverflow.com/a/37413510 [2018-06-02]</li>
-                <li>Chris Coyier (2013). "CSS Performance, Debugging, Naming Conventions". [Elektronisk]. Tillgänglig: https://www.smashingmagazine.com/2013/01/css-performance-debugging-naming-conventions/ [2018-06-02]</li>
+                <li>Louis Lazaris (2009). "The Mystery Of The CSS Float Property". [Elektronisk]. Tillgänglig: https://www. smashingmagazine.com/ 2009/10/the-mystery-of-css-float-property/ [2018-06-02]</li>
+                <li>Alan (2016). "How to center absolutely positioned element in div?". [Elektronisk]. Tillgänglig: https://stackoverflow.com /a/37413510 [2018-06-02]</li>
+                <li>Chris Coyier (2013). "CSS Performance, Debugging, Naming Conventions". [Elektronisk]. Tillgänglig: https://www. smashingmagazine.com/ 2013/01/css-performance-debugging-naming-conventions/ [2018-06-02]</li>
                 <li>Michiel Heijmans (2015). "Headings and why you should use them". [Elektronisk]. Tillgänglig: https://yoast.com/headings-use/ [2018-06-02]</li>
-                <li>Adam Davies (2014). "Why won't the margin be auto?". [Elektronisk]. Tillgänglig: https://www.codecademy.com/en/forum_questions/5227865580ff3350200003cd [2018-06-02]</li>
-                <li>Fahad Uddin (2016) och colosso (2012). "div with display:inline-block margin 0 auto not center". [Elektronisk]. Tillgänglig: https://stackoverflow.com/a/9313467 [2018-06-02]</li>
-                <li>Bert Bos (W3C, 2018). "Centering Things". [Elektronisk]. Tillgänglig: https://www.w3.org/Style/Examples/007/center.en.html#block [2018-06-03]</li>        
-                <li>Six Revisions (2018). "Circular Images with CSS". [Elektronisk]. Tillgänglig: https://www.webpagefx.com/blog/web-design/circular-images-css/ [2018-06-03]</li>
-                <li>Jonathan Nicol (2014). "Center and crop thumbnails with CSS". [Elektronisk]. Tillgänglig: http://jonathannicol.com/blog/2014/06/16/centre-crop-thumbnails-with-css/ [2018-06-03]</li>
-                <li>OJFord (2014) och Trong Lam Phan (2014). "Stretch child div height to fill parent that has dynamic height". [Elektronisk]. Tillgänglig: https://stackoverflow.com/a/25268379 [2018-06-03]</li>
-                <li>Rachel Andrew (2018). "Using Media Queries For Responsive Design In 2018". [Elektronisk]. Tillgänglig: https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/ [2018-06-03]</li>
-                <li>Patrik Bernhardsson (2018). "Tider för handledning". [Elektronisk]. Tillgänglig: https://docs.google.com/document/d/1I-Jvoy1v9g12AjVF8PDHODZBvXsXfhRA3BZ2J4MTP4s/edit#heading=h.qxapzqgp0gfy [2018-06-03]</li>
-                <li>WDD Staff (2010). "The simplicity of Helvetica". [Elektronisk]. Tillgänglig: https://www.webdesignerdepot.com/2010/01/the-simplicity-of-helvetica/ [2018-06-03]</li>
-                <li>Six Revisions (2008). "Resetting Your Styles with CSS Reset". [Elektronisk]. Tillgänglig: https://www.webpagefx.com/blog/web-design/css-tip-1-resetting-your-styles-with-css-reset/ [2018-06-03]</li>
+                <li>Adam Davies (2014). "Why won't the margin be auto?". [Elektronisk]. Tillgänglig: https://www.codecademy. com/en/ forum_questions/ 5227865580ff3350200003cd [2018-06-02]</li>
+                <li>Fahad Uddin (2016) och colosso (2012). "div with display:inline-block margin 0 auto not center". [Elektronisk]. Tillgänglig: https://stackoverflow. com/a/9313467 [2018-06-02]</li>
+                <li>Bert Bos (W3C, 2018). "Centering Things". [Elektronisk]. Tillgänglig: https://www.w3.org/Style/ Examples/007/ center.en.html#block [2018-06-03]</li>        
+                <li>Six Revisions (2018). "Circular Images with CSS". [Elektronisk]. Tillgänglig: https://www.webpagefx. com/blog/ web-design/circular-images-css/ [2018-06-03]</li>
+                <li>Jonathan Nicol (2014). "Center and crop thumbnails with CSS". [Elektronisk]. Tillgänglig: http://jonathannicol.com/ blog/ 2014/06/ 16/centre-crop-thumbnails-with-css/ [2018-06-03]</li>
+                <li>OJFord (2014) och Trong Lam Phan (2014). "Stretch child div height to fill parent that has dynamic height". [Elektronisk]. Tillgänglig: https://stackoverflow. com/a/25268379 [2018-06-03]</li>
+                <li>Rachel Andrew (2018). "Using Media Queries For Responsive Design In 2018". [Elektronisk]. Tillgänglig: https://www. smashingmagazine.com /2018/02/media-queries-responsive-design-2018/ [2018-06-03]</li>
+                <li>Patrik Bernhardsson (2018). "Tider för handledning". [Elektronisk]. Tillgänglig: https://docs.google. com/document/d/ 1I-Jvoy1v9g12AjVF8PDHO DZBvXsXfhRA3 BZ2J4MTP4s/ edit#heading=h.qxapzqgp0 gfy [2018-06-03]</li>
+                <li>WDD Staff (2010). "The simplicity of Helvetica". [Elektronisk]. Tillgänglig: https://www. webdesignerdepot.com /2010/01/the-simplicity-of-helvetica/ [2018-06-03]</li>
+                <li>Six Revisions (2008). "Resetting Your Styles with CSS Reset". [Elektronisk]. Tillgänglig: https://www.webpagefx. com/blog/ web-design/css-tip-1-resetting-your-styles-with-css-reset/ [2018-06-03]</li>
                 <li>Can I use (2018). [Elektronisk]. Tillgänglig: https://caniuse.com/ [2018-06-03]</li>
-                <li>W3C (2017). "HTML 5.2 W3C Recommendation". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/html52/[2018-06-02]</li>
-                <li>W3C (2014). "The header element". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/2014/REC-html5-20141028/sections.html#the-header-element [2018-06-03]</li>
-                <li>W3C (2014). "The section element". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/2014/REC-html5-20141028/sections.html#the-section-element [2018-06-03]</li>
-                <li>W3C (2014). "The nav element". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/2014/REC-html5-20141028/sections.html#the-nav-element [2018-06-03]</li>
-                <li>W3C (2014). "The footer element". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/2014/REC-html5-20141028/sections.html#the-footer-element [2018-06-03]</li>
-                <li>W3C (2014). "The h1, h2, h3, h4, h5, and h6 element". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/2014/REC-html5-20141028/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements [2018-06-03]</li>
-                <li>W3C (2014). "The main element". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/2014/REC-html5-20141028/grouping-content.html#the-main-element [2018-06-03]</li>
-                <li>W3C (2018). "Selectors Level 4". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/selectors/ [2018-06-03]</li>
-                <li>W3C (u.å.). "10 Visual formatting model details". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/CSS2/visudet.html [2018-06-03]</li>
-                <li>W3School (2018). "Browser Statistics". [Elektronisk]. Tillgänglig: https://www.w3schools.com/browsers/default.asp [2018-06-02]</li>
-                <li>W3School (2018). "Browser Display Statistics". [Elektronisk]. Tillgänglig: https://www.w3schools.com/browsers/browsers_display.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "Color Trends". [Elektronisk]. Tillgänglig: https://www.w3schools.com/colors/colors_trends.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS Fonts". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css_font.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS Layout - float and clear". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css_float.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS Navigation Bar". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css_navbar.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS background-position Property". [Elektronisk]. Tillgänglig: https://www.w3schools.com/cssref/pr_background-position.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS background-size Property". [Elektronisk]. Tillgänglig: https://www.w3schools.com/cssref/css3_pr_background-size.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS background-image Property". [Elektronisk]. Tillgänglig: https://www.w3schools.com/cssref/pr_background-image.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS text-shadow Property". [Elektronisk]. Tillgänglig: https://www.w3schools.com/cssref/css3_pr_text-shadow.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS Layout - display: inline-block". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css_inline-block.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS Margins". [Elektronisk]. Tillgänglig: https://www.w3schools.com/Css/css_margin.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS Layout - Horizontal and Vertical Align". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css_align.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "How TO - Three Column Layout". [Elektronisk]. Tillgänglig: https://www.w3schools.com/howto/howto_css_three_columns.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "HTML style guide". [Elektronisk]. Tillgänglig: https://www.w3schools.com/html/html5_syntax.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "HTML Color Shades". [Elektronisk]. Tillgänglig: https://www.w3schools.com/colors/colors_shades.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "HTML header Tag". [Elektronisk]. Tillgänglig: https://www.w3schools.com/tags/tag_header.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "HTML blockquote Tag". [Elektronisk]. Tillgänglig: https://www.w3schools.com/tags/tag_blockquote.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "HTML img alt Attribute". [Elektronisk]. Tillgänglig: https://www.w3schools.com/tags/att_img_alt.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "HTML Layouts". [Elektronisk]. Tillgänglig: https://www.w3schools.com/html/html_layout.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "Responsive Web Design - Images". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css_rwd_images.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "Responsive Web Design - Media Queries". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css_rwd_mediaqueries.asp [2018-06-03]</li>
-                <li>W3School (u.å.). "Responsive Web Design - The Viewport". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css_rwd_viewport.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "Try responsive breakpoints". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_breakpoints [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS Shadow Effects". [Elektronisk]. Tillgänglig: https://www.w3schools.com/css/css3_shadows.asp [2018-06-02]</li>
-                <li>W3School (u.å.). "CSS Layout - The position Property". [Elektronisk]. Tillgänglig: https://www.w3schools.com/Css/css_positioning.asp [2018-06-02]</li>
+                <li>W3C (2017). "HTML 5.2 W3C Recommendation". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/ html52/[2018-06-02]</li>
+                <li>W3C (2014). "The header element". [Elektronisk]. Tillgänglig: https://www.w3.org /TR/2014/REC-html5-20141028/sections.html# the-header-element [2018-06-03]</li>
+                <li>W3C (2014). "The section element". [Elektronisk]. Tillgänglig: https://www.w3.org /TR/2014/REC-html5-20141028/sections.html# the-section-element [2018-06-03]</li>
+                <li>W3C (2014). "The nav element". [Elektronisk]. Tillgänglig: https://www.w3.org/ TR/2014/REC-html5-20141028/sections.html# the-nav-element [2018-06-03]</li>
+                <li>W3C (2014). "The footer element". [Elektronisk]. Tillgänglig: https://www.w3.org /TR/2014/REC-html5-20141028/sections.html# the-footer-element [2018-06-03]</li>
+                <li>W3C (2014). "The h1, h2, h3, h4, h5, and h6 element". [Elektronisk]. Tillgänglig: https://www.w3.org /TR/2014/REC-html5-20141028/sections.html# the-h1,-h2,-h3,-h4,-h5,-and-h6-elements [2018-06-03]</li>
+                <li>W3C (2014). "The main element". [Elektronisk]. Tillgänglig: https://www.w3.org /TR/2014/REC-html5-20141028/grouping-content.html# the-main-element [2018-06-03]</li>
+                <li>W3C (2018). "Selectors Level 4". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/ selectors/ [2018-06-03]</li>
+                <li>W3C (u.å.). "10 Visual formatting model details". [Elektronisk]. Tillgänglig: https://www.w3.org/TR/ CSS2/visudet.html [2018-06-03]</li>
+                <li>W3School (2018). "Browser Statistics". [Elektronisk]. Tillgänglig: https://www.w3schools. com/browsers/default.asp [2018-06-02]</li>
+                <li>W3School (2018). "Browser Display Statistics". [Elektronisk]. Tillgänglig: https://www.w3schools.com/ browsers/ browsers_display.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "Color Trends". [Elektronisk]. Tillgänglig: https://www.w3schools. com/colors/ colors_trends.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS Fonts". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/css_font.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS Layout - float and clear". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/css_float.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS Navigation Bar". [Elektronisk]. Tillgänglig: https://www.w3schools.com/ css/css_navbar.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS background-position Property". [Elektronisk]. Tillgänglig: https://www.w3schools. com/cssref/ pr_background-position.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS background-size Property". [Elektronisk]. Tillgänglig: https://www.w3schools. com/cssref/ css3_pr_background-size.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS background-image Property". [Elektronisk]. Tillgänglig: https://www.w3schools. com/cssref/ pr_background-image.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS text-shadow Property". [Elektronisk]. Tillgänglig: https://www.w3schools. com/cssref/ css3_pr_text-shadow.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS Layout - display: inline-block". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/ css_inline-block.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS Margins". [Elektronisk]. Tillgänglig: https://www.w3schools. com/Css/ css_margin.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS Layout - Horizontal and Vertical Align". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/ css_align.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "How TO - Three Column Layout". [Elektronisk]. Tillgänglig: https://www.w3schools. com/howto/ howto_css_three_ columns.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "HTML style guide". [Elektronisk]. Tillgänglig: https://www.w3schools. com/html/ html5_syntax.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "HTML Color Shades". [Elektronisk]. Tillgänglig: https://www.w3schools. com/colors/ colors_shades.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "HTML header Tag". [Elektronisk]. Tillgänglig: https://www.w3schools. com/tags/ tag_header.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "HTML blockquote Tag". [Elektronisk]. Tillgänglig: https://www.w3schools. com/tags/ tag_blockquote.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "HTML img alt Attribute". [Elektronisk]. Tillgänglig: https://www.w3schools. com/tags/ att_img_alt.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "HTML Layouts". [Elektronisk]. Tillgänglig: https://www.w3schools. com/html/ html_layout.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "Responsive Web Design - Images". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/ css_rwd_images.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "Responsive Web Design - Media Queries". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/ css_rwd_mediaqueries.asp [2018-06-03]</li>
+                <li>W3School (u.å.). "Responsive Web Design - The Viewport". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/ css_rwd_viewport.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "Try responsive breakpoints". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/tryit.asp? filename= tryresponsive_breakpoints [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS Shadow Effects". [Elektronisk]. Tillgänglig: https://www.w3schools. com/css/ css3_shadows.asp [2018-06-02]</li>
+                <li>W3School (u.å.). "CSS Layout - The position Property". [Elektronisk]. Tillgänglig: https://www.w3schools. com/Css/ css_positioning.asp [2018-06-02]</li>
             </ul>
 
             <h4>Föreläsningar</h4>
-            <ul>
-                <li>Producerad av (År). Videons titel. [Video online] Tillgänglig: URL. [Åtkomstdatum]</li>
-                <li>Patrik Bernhardsson(2014). "Vad är Git". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/kurser/webbdesign/git-for-webbkodare/ [2018-06-01]</li>
-                <li>Jason Santa Maria (2012). "On Web Typography". Tillgänglig: https://vimeo.com/34178417# [2018-06-02]</li>
-                <li>Patrik Bernhardsson (2014). "Clean Code". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/kurser/webbdesign/clean-code/ [2018-06-03]</li>
-                <li>Christian Ohlsson (2013). "Tips och trix". [Video online]. Tillgänglig: http://media.hv.se/kurser/imcoh/webbutveckling-med-html-och-css/tips-och-trix/ [2018-06-03]</li>
-                <li>Patrik Bernhardsson (2014). "Responsive web design". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/kurser/webbdesign/responsive-web-design/ [2018-06-03]</li>
-                <li>Patrik Bernhardsson (2018). "HTML och CSS – En hel sida". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/kurser/webbdesign/html-en-hel-sida/ [2018-06-03]</li>
-                <li>Patrik Bernhardsson (2018). "Clearfix". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/kurser/webbdesign/grunderna-i-css/ [2018-06-03]</li>
-                <li>Patrik Bernhardsson (2018). "Förhindra container collapse". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/kurser/webbdesign/grunderna-i-css/ [2018-06-03]</li>
-                <li>Patrik Bernhardsson (2014), "Semantisk kod". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/kurser/webbdesign/semantisk-kod/ [2018-06-03]</li>
-                <li>Patrik Bernhardsson (2018). "Att arbeta med floats". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/kurser/webbdesign/grunderna-i-css/ [2018-06-03]</li>
+            <ul>                
+                <li>Patrik Bernhardsson(2014). "Vad är Git". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/ kurser/webbdesign/git-for-webbkodare/ [2018-06-01]</li>
+                <li>Jason Santa Maria (2012). "On Web Typography". Tillgänglig: https://vimeo.com/ 34178417# [2018-06-02]</li>
+                <li>Patrik Bernhardsson (2014). "Clean Code". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/ kurser/webbdesign/clean-code/ [2018-06-03]</li>
+                <li>Christian Ohlsson (2013). "Tips och trix". [Video online]. Tillgänglig: http://media.hv.se/kurser/ imcoh/webbutveckling-med-html-och-css/tips-och-trix/ [2018-06-03]</li>
+                <li>Patrik Bernhardsson (2014). "Responsive web design". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/ kurser/webbdesign/ responsive-web-design/ [2018-06-03]</li>
+                <li>Patrik Bernhardsson (2018). "HTML och CSS – En hel sida". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/ kurser/webbdesign/html-en-hel-sida/ [2018-06-03]</li>
+                <li>Patrik Bernhardsson (2018). "Clearfix". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/ kurser/webbdesign/ grunderna-i-css/ [2018-06-03]</li>
+                <li>Patrik Bernhardsson (2018). "Förhindra container collapse". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/ kurser/webbdesign/ grunderna-i-css/ [2018-06-03]</li>
+                <li>Patrik Bernhardsson (2014), "Semantisk kod". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/ kurser/webbdesign/ semantisk-kod/ [2018-06-03]</li>
+                <li>Patrik Bernhardsson (2018). "Att arbeta med floats". [Video online]. Tillgänglig: http://cumulus.ei.hv.se/~pb/ kurser/webbdesign/ grunderna-i-css/ [2018-06-03]</li>
             </ul>
 
             <h3>Fotnoter</h3>
