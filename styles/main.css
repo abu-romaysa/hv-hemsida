@@ -136,7 +136,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Roboto', sans-serif; /*firefly inspiration*/
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     line-height: 1.5em;
     margin-bottom: 0.5em;
@@ -192,7 +192,7 @@ main img, #site-footer {
 #site-header {
     padding:  18px;
     min-height: 330px;
-    color: white; /* så att texten syns bättre framför bilden */
+    color: white;
 
     /* som visas när bilden laddas och för att "blanda" med bilden för att ge en mörkare nyans */
     background-color: gray;
@@ -223,7 +223,7 @@ main img, #site-footer {
 }
 
 #site-header h1 {
-    font-size: 3em; /* TODO är detta strlken jag vill ha? em? */
+    font-size: 3em;
     float: left;
     margin-left: 2%;
     line-height: 1em;
@@ -238,19 +238,19 @@ main img, #site-footer {
     /* obs. för enhetligt utseende så samma avstånd används av h1-elementet för sin vänstra marginal */
     margin-right: 2%;
 
-    text-transform: uppercase; /*These properties are supported in effectively all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)*/    
+    text-transform: uppercase;
 }
 
 #site-header nav {
     font-size: 1.6em;
 }
 
-#site-header li { /* TODO lägga till nav? och obs att ul tagits bort, rätt? */
+#site-header li {
     display: inline-block;
     margin-left: 20px;
 }
 
-#site-header nav a { /* TODO radera nav för att endast få ner till tre nivåer? optimering? */
+#site-header nav a {
 
     /* RGB färgkod med opacitet */
     color: rgba(255,255,255,0.75);
@@ -286,11 +286,6 @@ main {
     margin: 4% auto;
     background: white;
     padding: 50px 100px;
-    /*TODO padding: 2.7em 5.5em;*/
-
-    /*display: flex;*/ /*verkar förstöra float mekanismen men har box sizing i sig?*/
-    /*samma höjd på kolumner*/
-    /*flex förstör kolumn paddingen eller beräkningen i mobil versionen*/
 
     /* för att skapa ett coolt pappersliknande utseende */
     /* https://www.w3schools.com/css/css3_shadows.asp */
